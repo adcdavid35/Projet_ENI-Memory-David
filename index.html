@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>ENI MEMORY</title>
-    <meta name="description" content="Jeu de mémoire basé sur la découverte d'images similaires. Une fois tous les binômes trouvés, vous avez gagné!">
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    <header>ENI - <Strong>Memory</Strong> - Accueil</header>
-    <nav>
-        <ul>
+    <meta
+      name="description"
+      content="Jeu de mémoire basé sur la découverte d'images similaires. Une fois tous les binômes trouvés, vous avez gagné!"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="entete">
+        <h1>ENI - <strong>Memory</strong> - Accueil</h1>
+      </div>
+    </header>
+
+    <main>
+      <aside class="menu">
+        <nav>
+          <ul>
             <a href="index.html"><li class="Accueil" title="Accueil">Accueil</li></a>
             <a href="inscription.html"><li class="Inscription" title="S'incrire">S'incrire</li></a>
-            <a href="connexion"><li class="Connexion" title="Se connecter">Se connecter</li></a>
-            <a href="profil"><li class="Profil" title="Profil">Profil</li></a>
-            <a href="jouer"><li class="Jouer" title="Jouer">Jouer</li></a>
-        </ul>
+            <a href="connexion.html"><li class="Connexion" title="Se connecter">Se connecter</li></a>
+            <a href="profil.html"><li class="Profil" title="Profil">Profil</li></a>
+            <a href="play.html"><li class="Jouer" title="Jouer">Jouer</li></a>
+          </ul>
+        </nav>
+      </aside>
+      <div class="box">
+            <div class="welcome">Bienvenue sur le site du Memory de l'ENI. <br> Venez jouer avec nous et faites le meilleur score possible!</div>
+            <div class="rules">
+                <h2>Règles du jeu:</h2>
+                <ul>Retourner deux cartes:
+                    <li>Si elles sont identiques: le jeu laisse les cartes visibles.</li>
+                    <li>Si elles sont différentes : les cartes sont retournées faces cachées là où elles étaient.</li>
+                    <li>La partie est terminée lorsque toutes les paires sont assemblées</li>
+                </ul>
+            </div>
+            <div class="global"><img src="Images/Animes/Global.png" alt="tableau regroupant l'ensemble des cartes de la partie"></div>
+            <div class="foot">Si vous voulez vous souvenir de votre score : inscrivez vous via le <a href="inscription.html">formulaire</a> dédié.<br>
+            Le jeu garde les <strong>5 meilleurs</strong> scores en mémoire. <br> Si vous voulez relancer une partie, cliquez sur <strong>la barre d'espace</strong>.
 
-    </nav>
-    <main></main>
+      </div>
+    </main>
     <footer></footer>
-    
-
-
-
-
-
-
-
-
-
-
 
     <script src="./js/script.js"></script>
-</body>
+  </body>
 </html>

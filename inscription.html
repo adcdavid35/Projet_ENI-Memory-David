@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Formulaire d'inscription du jeu Memory de l'ENI"
+    />
+    <title>Inscription</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="entete">
+        <h1>ENI - <strong>Memory</strong> - S'inscrire</h1>
+      </div>
+    </header>
+    <main>
+      <aside class="menu">
+        <nav>
+          <ul>
+            <a href="index.html"
+              ><li class="Accueil" title="Accueil">Accueil</li></a
+            >
+            <a href="inscription.html"
+              ><li class="Inscription" title="S'incrire">S'incrire</li></a
+            >
+            <a href="connexion.html"
+              ><li class="Connexion" title="Se connecter">Se connecter</li></a
+            >
+            <a href="profil.html"
+              ><li class="Profil" title="Profil">Profil</li></a
+            >
+            <a href="play.html"><li class="Jouer" title="Jouer">Jouer</li></a>
+          </ul>
+        </nav>
+      </aside>
+      <div>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Formulaire d'inscription</legend>
+            <h2 class="titreBox">Inscrivez-vous</h2>
+
+            <section class="name">
+              <label for="nom">Nom d'utilisateur</label>
+              <input
+                type="text"
+                name="nom"
+                id="nom"
+                placeholder="3 caractères minimum"
+                required
+              />
+              <span class="valide"
+                ><img src="Images/error.svg" alt="non conforme" width="1%"
+              /></span>
+              <p id="pseudo">
+                Choississez un pseudo contenant au moins 3 caractères
+              </p>
+            </section>
+
+            <section class="email">
+              <label for="mail">Entrez votre adresse mail</label>
+              <input
+                type="text"
+                name="mail"
+                id="mail"
+                placeholder="Votre mail"
+                required
+              />
+              <span class="valide"
+                ><img src="Images/error.svg" alt="non conforme" width="1%"
+              /></span>
+              <p id="@mail">Rentrez un</p>
+            </section>
+
+            <section class="password">
+              <label for="MDP">Mot de passe</label>
+              <input
+                type="text"
+                name="MDP"
+                id="MDP"
+                placeholder="Votre mot de passe"
+                required
+              />
+              <span class="valide"
+                ><img src="Images/error.svg" alt="non conforme" width="1%"
+              /></span>
+              <p class="regex">
+                Au moins un symbole, un chiffre, ainsi que 6 caractères minimum
+              </p>
+              <span class="niveau" id="faible">faible</span>
+              <span class="niveau" id="moyen">moyen</span>
+              <span class="niveau" id="fort">fort</span>
+            </section>
+
+            <section class="confirmPW">
+              <label for="MDP2">Confirmez votre mot de passe</label>
+              <input type="text" name="nom" id="nom" placeholder="Confirmez votre mot de passe" required/>
+              <span class="valide"><img src="Images/error.svg" alt="non conforme" width="1%"/></span>
+              <p class="regex">
+                Au moins un symbole, un chiffre, ainsi que 6 caractères minimum
+              </p>
+              <span class="niveau" id="faible">faible</span>
+              <span class="niveau" id="moyen">moyen</span>
+              <span class="niveau" id="fort">fort</span>
+            </section>
+            <section class="bouton">
+            <input type="submit" value="Création du compte" />
+            <input type="reset" value="Annuler" />
+            </section>
+
+           
+            <p class="mandatory">Tous les champs sont obligatoires!</p>
+          </fieldset>
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
