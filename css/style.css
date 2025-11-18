@@ -88,35 +88,108 @@ li.regles {
 
 section {
     display: grid;
-    margin: 0;
+    margin: 0 5vw;
     padding: 2px;
-    grid-template-columns: 20fr 1fr;
-    grid-template-rows: repeat(3,3vh);
-    gap: 5px 4px;
-    grid-auto-flow: row;
     align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 3vh) 1vh 1.5vh;
+    gap: 5px 4px;
     grid-template-areas:
-        "titre ."
-        "entree valide"
-        "com ."
+        "titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre . . ."
+        "entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree valide valide valide"
+        "com com com com com com com com com com com com com com com com com com com com com . . ."
+        ". . rouge rouge rouge rouge . . . . orange orange orange orange . . . . vert vert vert vert . ."
+        ". . faible faible faible faible . . . . moyen moyen moyen moyen . . . . fort fort fort fort . .";
+
 }
 
 label {
     grid-area: titre;
-    font-size: clamp(1.2rem, 1vw, 1.7rem);
+    font-size: clamp(0.9rem, 1vw, 1.5rem);
 }
 
 input {
     border: 0;
     height: 5vh;
     grid-area: entree;
-    font-size: clamp(1rem, 1vw, 1.5rem);
+    font-size: clamp(0.8rem, 1vw, 1.3rem);
 }
 
 span.valide {
+    min-width: 75px;
+    justify-items: center;
+    align-items: center;
     grid-area: valide;
 }
+
+.couleur#fai {
+    grid-area: rouge;
+    font-size: 3px;
+    color: red;
+    background-color: red;
+}
+
+.couleur#moy {
+    grid-area: orange;
+
+    font-size: 3px;
+    color: orange;
+    background-color: orange;
+}
+
+.couleur#for {
+    grid-area: vert;
+    font-size: 3px;
+    color: green;
+    background-color: green;
+}
+
+.niveau#faible {
+    justify-self: center;
+    grid-area: faible;
+    color: red;
+}
+
+.niveau#moyen {
+    justify-self: center;
+    grid-area: moyen;
+    color: orange;
+}
+
+.niveau#fort {
+    justify-self: center;
+    grid-area: fort;
+    color: green;
+}
+
 p {
     grid-area: com;
     font-size: clamp(0.8rem, 1vw, 1.3rem);
 }
+
+.mandatory {
+    display: flex;
+    justify-content: center;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+}
+
+.bouton {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    width: 90vw;
+    justify-content: space-around;
+}
+
+.submit, .reset{
+    border-radius: 5px;
+    border: 1px;
+    border-style: dotted;
+    width: 30vw;
+    height: 5vh;
+    margin: 0;
+    padding: 0;
+  
+}
+
