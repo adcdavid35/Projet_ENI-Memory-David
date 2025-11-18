@@ -86,7 +86,21 @@ li.regles {
 }
 
 
-section {
+.name, .email, .connect{
+    display: grid;
+    margin: 0 5vw;
+    padding: 2px;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 3vh);
+    gap: 5px 4px;
+    grid-template-areas:
+        "titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre . . ."
+        "entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree valide valide valide"
+        "com com com com com com com com com com com com com com com com com com com com com . . ."
+}
+
+.password, .confirmPW {
     display: grid;
     margin: 0 5vw;
     padding: 2px;

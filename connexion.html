@@ -18,7 +18,7 @@
       </div>
     </header>
     <main>
-      <aside >
+      <aside>
         <nav>
           <ul class="menu">
             <a href="index.html"
@@ -40,7 +40,6 @@
       <div>
         <form action="#" method="post">
           <fieldset>
-            <legend>Formulaire de connexion</legend>
             <h2 class="titreBox">Connectez-vous</h2>
 
             <section class="email">
@@ -51,11 +50,13 @@
                 id="mail"
                 placeholder="Votre mail"
                 required
+                autofocus
+                tabindex="1"
               />
             </section>
-            <hr>
+            <hr />
 
-            <section class="password">
+            <section class="connect">
               <label for="MDP">Mot de passe</label>
               <input
                 type="text"
@@ -63,12 +64,16 @@
                 id="MDP"
                 placeholder="Votre mot de passe"
                 required
+                tabindex="2"
               />
-              <section class="bouton">
-                <input type="submit" value="Création du compte" />
-                <input type="reset" value="Annuler" />
-              </section>
             </section>
+              <hr />
+
+              <section class="bouton">
+                <button class="submit">Se connecter</button>
+                <button class="reset">Annuler</button>
+              </section>
+            
           </fieldset>
         </form>
       </div>
