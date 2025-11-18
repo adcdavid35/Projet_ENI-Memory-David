@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Profil</title>
+    <meta
+      name="description"
+      content="Votre profil dans le jeu Memory de l'ENI."
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="entete">
+        <h1>ENI - <strong>Memory</strong> - Profil</h1>
+      </div>
+    </header>
+
+    <main>
+      <aside >
+        <nav>
+          <ul class="menu">
+            <a href="index.html"
+              ><li class="Accueil" title="Accueil">Accueil</li></a
+            >
+            <a href="inscription.html"
+              ><li class="Inscription" title="S'incrire">S'incrire</li></a
+            >
+            <a href="connexion.html"
+              ><li class="Connexion" title="Se connecter">Se connecter</li></a
+            >
+            <a href="profil.html"
+              ><li class="Profil" title="Profil">Profil</li></a
+            >
+            <a href="play.html"><li class="Jouer" title="Jouer">Jouer</li></a>
+          </ul>
+        </nav>
+      </aside>
+      <div class="box">
+        <div class="welcome">
+          <h2 class="titreBox">Profil</h2>
+          <img
+            src="Images/icones et avatar/Avatar.png"
+            alt="avatar du joueur"
+            width="5%"
+          />
+        </div>
+        <section>
+          <div>nom</div>
+          <div>mail</div>
+        </section>
+        <section>
+          <label for="choix">Choix du Memory</label>
+          <select name="jeu" id="choix">
+            <option value="Default" selected disabled>
+              Choississez votre jeu :
+            </option>
+            <option value="Chiens">Chiens</option>
+            <option value="Dino">Dinosaures</option>
+            <option value="DinoNom">Dinosaures avec noms</option>
+            <option value="Ferme">Aminaux de la ferme</option>
+            <option value="Savane">Animaux de la savane</option>
+            <option value="Legumes">Légumes</option>
+            <option value="Scrabble">Scrabble</option>
+          </select>
+        </section>
+        <div class="global">
+          <img
+            src="Images/Animes/Global.png"
+            alt="tableau regroupant l'ensemble des cartes de la partie choisie"
+          />
+        </div>
+
+        <section>
+          <label for="Taille">Choix du Memory</label>
+          <select name="plateau" id="Taille">
+            <option value="Default" selected disabled>
+              Choississez la taille de votre plateau :
+            </option>
+            <option value="12">4 X 3</option>
+            <option value="20">5 X 4</option>
+            <option value="30">6 X 5</option>
+          </select>
+        </section>
+        <section class="bouton">
+          <input type="submit" value="Enregistrer vos options" />
+        </section>
+        <section class="Score">
+            <h2>Derniers scores :</h2>
+
+            <!-- faire le tableau des scores avec JS -->
+
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </main>
+    <footer></footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

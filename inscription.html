@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="description"
-      content="Formulaire d'inscription du jeu Memory de l'ENI"
+      content="Formulaire d'inscription au jeu Memory de l'ENI."
     />
     <title>Inscription</title>
     <link rel="stylesheet" href="./css/style.css" />
@@ -18,9 +18,9 @@
       </div>
     </header>
     <main>
-      <aside class="menu">
+      <aside >
         <nav>
-          <ul>
+          <ul class="menu">
             <a href="index.html"
               ><li class="Accueil" title="Accueil">Accueil</li></a
             >
@@ -59,6 +59,7 @@
                 Choississez un pseudo contenant au moins 3 caractères
               </p>
             </section>
+            <hr>
 
             <section class="email">
               <label for="mail">Entrez votre adresse mail</label>
@@ -72,8 +73,9 @@
               <span class="valide"
                 ><img src="Images/error.svg" alt="non conforme" width="1%"
               /></span>
-              <p id="@mail">Rentrez un</p>
+              <p id="@mail">Rentrez un mail valide</p>
             </section>
+            <hr>
 
             <section class="password">
               <label for="MDP">Mot de passe</label>
@@ -94,6 +96,7 @@
               <span class="niveau" id="moyen">moyen</span>
               <span class="niveau" id="fort">fort</span>
             </section>
+            <hr>
 
             <section class="confirmPW">
               <label for="MDP2">Confirmez votre mot de passe</label>
@@ -106,10 +109,13 @@
               <span class="niveau" id="moyen">moyen</span>
               <span class="niveau" id="fort">fort</span>
             </section>
+            <hr>
+            
             <section class="bouton">
             <input type="submit" value="Création du compte" />
             <input type="reset" value="Annuler" />
             </section>
+            
 
            
             <p class="mandatory">Tous les champs sont obligatoires!</p>

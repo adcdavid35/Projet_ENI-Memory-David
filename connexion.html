@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Formulaire de connexion au jeu Memory de l'ENI."
+    />
+    <title>Connexion</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="entete">
+        <h1>ENI - <strong>Memory</strong> - Connecter</h1>
+      </div>
+    </header>
+    <main>
+      <aside >
+        <nav>
+          <ul class="menu">
+            <a href="index.html"
+              ><li class="Accueil" title="Accueil">Accueil</li></a
+            >
+            <a href="inscription.html"
+              ><li class="Inscription" title="S'incrire">S'incrire</li></a
+            >
+            <a href="connexion.html"
+              ><li class="Connexion" title="Se connecter">Se connecter</li></a
+            >
+            <a href="profil.html"
+              ><li class="Profil" title="Profil">Profil</li></a
+            >
+            <a href="play.html"><li class="Jouer" title="Jouer">Jouer</li></a>
+          </ul>
+        </nav>
+      </aside>
+      <div>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Formulaire de connexion</legend>
+            <h2 class="titreBox">Connectez-vous</h2>
+
+            <section class="email">
+              <label for="mail">Entrez votre adresse mail</label>
+              <input
+                type="text"
+                name="mail"
+                id="mail"
+                placeholder="Votre mail"
+                required
+              />
+            </section>
+            <hr>
+
+            <section class="password">
+              <label for="MDP">Mot de passe</label>
+              <input
+                type="text"
+                name="MDP"
+                id="MDP"
+                placeholder="Votre mot de passe"
+                required
+              />
+              <section class="bouton">
+                <input type="submit" value="Création du compte" />
+                <input type="reset" value="Annuler" />
+              </section>
+            </section>
+          </fieldset>
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>

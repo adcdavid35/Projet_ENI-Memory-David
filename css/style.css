@@ -1,0 +1,122 @@
+body {
+    width: 100vw;
+    height: auto;
+    margin: 3px;
+    padding: 3px 15px;
+}
+
+main {
+    width: 95vw;
+    height: auto;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: clamp(1.5rem, 4vw, 4rem);
+}
+
+h2 {
+    display: flex;
+    justify-content: left;
+    font-size: x-large;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "Accueil Incrire Connecter Profil Jouer";
+    padding-left: 0;
+    font-size: clamp(0.8rem, 3vw, 3rem);
+}
+
+.Accueil {
+    grid-area: Accueil;
+    justify-self: center;
+}
+
+.Inscription {
+    grid-area: Incrire;
+    justify-self: center;
+}
+
+.Connexion {
+    grid-area: Connecter;
+    justify-self: center;
+}
+
+.Profil {
+    grid-area: Profil;
+    justify-self: center;
+}
+
+.Jouer {
+    grid-area: Jouer;
+    justify-self: center;
+}
+
+a li {
+    list-style: none;
+}
+
+.box {
+    border-radius: 10px;
+    background-color: rgba(50, 50, 50, 25%);
+    margin: 1%;
+    padding: 2%;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+}
+
+.global {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+}
+
+li.regles {
+    list-style: circle;
+}
+
+.titreBox {
+    display: flex;
+    justify-content: center;
+}
+
+
+section {
+    display: grid;
+    margin: 0;
+    padding: 2px;
+    grid-template-columns: 20fr 1fr;
+    grid-template-rows: repeat(3,3vh);
+    gap: 5px 4px;
+    grid-auto-flow: row;
+    align-items: center;
+    grid-template-areas:
+        "titre ."
+        "entree valide"
+        "com ."
+}
+
+label {
+    grid-area: titre;
+    font-size: clamp(1.2rem, 1vw, 1.7rem);
+}
+
+input {
+    border: 0;
+    height: 5vh;
+    grid-area: entree;
+    font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
+span.valide {
+    grid-area: valide;
+}
+p {
+    grid-area: com;
+    font-size: clamp(0.8rem, 1vw, 1.3rem);
+}
