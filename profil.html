@@ -19,7 +19,7 @@
     </header>
 
     <main>
-      <aside >
+      <aside>
         <nav>
           <ul class="menu">
             <a href="index.html"
@@ -44,15 +44,37 @@
           <img
             src="Images/icones et avatar/Avatar.png"
             alt="avatar du joueur"
-            width="5%"
+            width="15%"
           />
         </div>
-        <section>
-          <div>nom</div>
-          <div>mail</div>
-        </section>
-        <section>
-          <label for="choix">Choix du Memory</label>
+        <div>
+          <section class="name">
+            <label for="nom">Nom d'utilisateur</label>
+            <input
+              type="text"
+              name="nom"
+              id="nom"
+              placeholder="Votre pseudo"
+              disabled
+            />
+          </section>
+          <hr />
+
+          <section class="email">
+            <label for="mail">Email</label>
+            <input
+              type="text"
+              name="mail"
+              id="mail"
+              placeholder="Votre mail"
+              disabled
+            />
+          </section>
+          <hr />
+        </div>
+
+        <section class="choix">
+          <label for="choix">Choix du Memory :</label>
           <select name="jeu" id="choix">
             <option value="Default" selected disabled>
               Choississez votre jeu :
@@ -70,14 +92,15 @@
           <img
             src="Images/Animes/Global.png"
             alt="tableau regroupant l'ensemble des cartes de la partie choisie"
+            width="100%"
           />
         </div>
 
-        <section>
-          <label for="Taille">Choix du Memory</label>
+        <section class="taille">
+          <label for="Taille">Taille du Memory :</label>
           <select name="plateau" id="Taille">
             <option value="Default" selected disabled>
-              Choississez la taille de votre plateau :
+              Taille de votre plateau de jeu:
             </option>
             <option value="12">4 X 3</option>
             <option value="20">5 X 4</option>
@@ -85,29 +108,13 @@
           </select>
         </section>
         <section class="bouton">
-          <input type="submit" value="Enregistrer vos options" />
+           <button class="submit">Enregistrer vos options</button>
         </section>
         <section class="Score">
-            <h2>Derniers scores :</h2>
+          <h3>Derniers scores :</h3>
 
-            <!-- faire le tableau des scores avec JS -->
-
-
-
-
-
+          <!-- faire le tableau des scores avec JS -->
         </section>
-
-
-
-
-
-
-
-
-
-
-
       </div>
     </main>
     <footer></footer>

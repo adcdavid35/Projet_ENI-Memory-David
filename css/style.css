@@ -21,8 +21,15 @@ h2 {
     justify-content: left;
     font-size: x-large;
     font-size: clamp(1.2rem, 2vw, 2rem);
-
 }
+
+h3 {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
 
 .menu {
     display: grid;
@@ -114,7 +121,6 @@ li.regles {
         "com com com com com com com com com com com com com com com com com com com com com . . ."
         ". . rouge rouge rouge rouge . . . . orange orange orange orange . . . . vert vert vert vert . ."
         ". . faible faible faible faible . . . . moyen moyen moyen moyen . . . . fort fort fort fort . .";
-
 }
 
 label {
@@ -204,6 +210,22 @@ p {
     height: 5vh;
     margin: 0;
     padding: 0;
-  
 }
 
+.welcome{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.choix, .taille{
+   display: flex;
+   flex-direction: column;
+}
+
+select{
+    width: 35vw;
+    height: 3vh;
+    margin: 1vw;
+    font-size: clamp(0.5rem, 2vw, 2rem);
+}
