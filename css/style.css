@@ -93,7 +93,7 @@ li.regles {
 }
 
 
-.name, .email, .connect{
+.name, .email, .connect {
     display: grid;
     margin: 0 5vw;
     padding: 2px;
@@ -151,7 +151,6 @@ span.valide {
 
 .couleur#moy {
     grid-area: orange;
-
     font-size: 3px;
     color: orange;
     background-color: orange;
@@ -202,7 +201,7 @@ p {
     justify-content: space-around;
 }
 
-.submit, .reset{
+.submit, .reset {
     border-radius: 5px;
     border: 1px;
     border-style: dotted;
@@ -212,20 +211,59 @@ p {
     padding: 0;
 }
 
-.welcome{
+.welcome {
     display: flex;
     flex-direction: column;
     align-items: center
 }
 
-.choix, .taille{
-   display: flex;
-   flex-direction: column;
+.choix, .taille {
+    display: flex;
+    flex-direction: column;
 }
 
-select{
+select {
     width: 35vw;
     height: 3vh;
     margin: 1vw;
     font-size: clamp(0.5rem, 2vw, 2rem);
+}
+
+.rules {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 85vw;
+    font-size: clamp(1.2rem, 1vw, 2rem);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.rul {
+    height: 1vh;
+    font-size: clamp(0.8rem, 2vw, 3rem);
+}
+
+table {
+    width: 90vw;
+    height: auto;
+
+}
+
+
+
+
+tbody {
+    display: grid;
+    grid-template-rows: auto;
+    gap: 1vw;
+    justify-content: center;
+
+}
+
+td {
+    grid-template-columns: auto;
+    gap: 1vw;
+    justify-content: center;
 }
