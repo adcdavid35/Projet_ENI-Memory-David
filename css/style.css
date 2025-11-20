@@ -93,7 +93,7 @@ li.regles {
 }
 
 
-.name, .email, .connect {
+.name, .email, .connect, .confirmPW  {
     display: grid;
     margin: 0 5vw;
     padding: 2px;
@@ -107,7 +107,7 @@ li.regles {
         "com com com com com com com com com com com com com com com com com com com com com . . ."
 }
 
-.password, .confirmPW {
+.password{
     display: grid;
     margin: 0 5vw;
     padding: 2px;
@@ -143,6 +143,7 @@ span.valide {
 }
 
 .couleur#fai {
+    visibility: hidden;
     grid-area: rouge;
     font-size: 3px;
     color: red;
@@ -150,6 +151,7 @@ span.valide {
 }
 
 .couleur#moy {
+    visibility: hidden;
     grid-area: orange;
     font-size: 3px;
     color: orange;
@@ -157,6 +159,7 @@ span.valide {
 }
 
 .couleur#for {
+    visibility: hidden;
     grid-area: vert;
     font-size: 3px;
     color: green;
@@ -164,18 +167,21 @@ span.valide {
 }
 
 .niveau#faible {
+    visibility: hidden;
     justify-self: center;
     grid-area: faible;
     color: red;
 }
 
 .niveau#moyen {
+    visibility: hidden;
     justify-self: center;
     grid-area: moyen;
     color: orange;
 }
 
 .niveau#fort {
+    visibility: hidden;
     justify-self: center;
     grid-area: fort;
     color: green;

@@ -48,6 +48,7 @@
                 type="text"
                 name="nom"
                 id="nom"
+                minlength="3"
                 placeholder="3 caractères minimum"
                 required
                 autofocus
@@ -75,7 +76,7 @@
               <span class="valide"
                 ><img src="Images/error.svg" alt="non conforme" width="25%"
               /></span>
-              <p id="@mail">Rentrez un mail valide</p>
+              <p id="mail1">Rentrez un mail valide</p>
             </section>
             <hr />
 
@@ -92,8 +93,8 @@
               <span class="valide"
                 ><img src="Images/error.svg" alt="non conforme" width="25%"
               /></span>
-              <p class="regex">
-                Au moins un symbole, un chiffre, ainsi que 6 caractères minimum
+              <p id="regex">
+                Au moins un symbole, un chiffre, ainsi que 6 caractères minimum dont une majuscule!
               </p>
               <span class="couleur" id="fai">faible</span>
               <span class="niveau" id="faible">faible</span>
@@ -108,8 +109,8 @@
               <label for="MDP2">Confirmez votre mot de passe</label>
               <input
                 type="text"
-                name="nom"
-                id="nom"
+                name="MDP2"
+                id="MDP2"
                 placeholder="Confirmez votre mot de passe"
                 required
                 tabindex="4"
@@ -118,15 +119,8 @@
                 ><img src="Images/error.svg" alt="non conforme" width="25%"
               /></span>
               <p class="regex">
-                Au moins un symbole, un chiffre, ainsi que 6 caractères minimum
+                Il n'est pas identique.
               </p>
-
-              <span class="couleur" id="fai">faible</span>
-              <span class="niveau" id="faible">faible</span>
-              <span class="couleur" id="moy">moyen</span>
-              <span class="niveau" id="moyen">moyen</span>
-              <span class="couleur" id="for">fort</span>
-              <span class="niveau" id="fort">fort</span>
             </section>
             <hr />
 
@@ -141,5 +135,6 @@
       </div>
     </main>
     <footer></footer>
+    <script src="./js/inscription.js"></script>
   </body>
 </html>
