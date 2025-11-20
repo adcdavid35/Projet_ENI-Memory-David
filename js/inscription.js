@@ -3,9 +3,11 @@ window.onload = init;
 function init() {
   document.getElementById("nom").addEventListener("input", (e) => {
     if (e.target.value.length < 3) {
-      let pseudo = (document.getElementById("pseudo").style.color = "red");
+      document.getElementById("pseudo").style.color = "red";
+      document.getElementById("valide1").src = "./Images/error.svg";
     } else {
-      let pseudo = (document.getElementById("pseudo").style.color = "black");
+      document.getElementById("pseudo").style.color = "black";
+      document.getElementById("valide1").src = "./Images/check.svg";
     }
   });
 
@@ -16,8 +18,10 @@ function init() {
   document.getElementById("mail").addEventListener("input", (e) => {
     if (!validateEmail(e.target.value)) {
       document.getElementById("mail1").style.color = "red";
+      document.getElementById("valide2").src = "./Images/error.svg";
     } else {
       document.getElementById("mail1").style.color = "black";
+      document.getElementById("valide2").src = "./Images/check.svg";
     }
   });
 
@@ -31,6 +35,7 @@ function init() {
     const val = e.target.value;
     if (!validatePassword(val)) {
       document.getElementById("regex").style.color = "red";
+      document.getElementById("valide3").src = "./Images/error.svg";
     } else if (val.length < 6) {
       document.getElementById("fai").style.visibility = "visible";
       document.getElementById("faible").style.visibility = "visible";
@@ -39,6 +44,7 @@ function init() {
       document.getElementById("for").style.visibility = "hidden";
       document.getElementById("fort").style.visibility = "hidden";
       document.getElementById("regex").style.color = "black";
+      document.getElementById("valide3").src = "./Images/check.svg";
     } else if (val.length >= 6 && val.length < 9) {
       document.getElementById("fai").style.visibility = "hidden";
       document.getElementById("faible").style.visibility = "hidden";
@@ -47,6 +53,7 @@ function init() {
       document.getElementById("for").style.visibility = "hidden";
       document.getElementById("fort").style.visibility = "hidden";
       document.getElementById("regex").style.color = "black";
+      document.getElementById("valide3").src = "./Images/check.svg";
     } else {
       document.getElementById("fai").style.visibility = "hidden";
       document.getElementById("faible").style.visibility = "hidden";
@@ -55,6 +62,22 @@ function init() {
       document.getElementById("for").style.visibility = "visible";
       document.getElementById("fort").style.visibility = "visible";
       document.getElementById("regex").style.color = "black";
+      document.getElementById("valide3").src = "./Images/check.svg";
     }
+
+    document.getElementById("MDP2").addEventListener("input", (f) => {
+      const val2 = f.target.value;
+      if (val === val2) {
+        document.getElementById("valide4").src = "./Images/check.svg";
+        document.getElementById("egal").innerHTML = "Il est identique.";
+        document.getElementById("egal").style.color = "green";
+      } else {
+        document.getElementById("valide4").src = "./Images/error.svg";
+        document.getElementById("egal").innerHTML = "Il n'est pas identique.";
+        document.getElementById("egal").style.color = "red";
+      }
+    });
   });
+
+  // Faire le test de la confirmation du mot de passe
 }
