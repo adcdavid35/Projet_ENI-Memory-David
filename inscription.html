@@ -38,7 +38,7 @@
         </nav>
       </aside>
       <div>
-        <form action="#" method="post">
+        <form action="#" method="post" id="formIns">
           <fieldset>
             <h2 class="titreBox">Inscrivez-vous</h2>
 
@@ -55,7 +55,11 @@
                 tabindex="1"
               />
               <span class="valide"
-                ><img id="valide1"src="Images/error.svg" alt="non conforme" width="25%"
+                ><img
+                  id="valide1"
+                  src="Images/error.svg"
+                  alt="non conforme"
+                  width="25%"
               /></span>
               <p id="pseudo">
                 Choississez un pseudo contenant au moins 3 caractères
@@ -74,7 +78,11 @@
                 tabindex="2"
               />
               <span class="valide"
-                ><img id="valide2" src="Images/error.svg" alt="non conforme" width="25%"
+                ><img
+                  id="valide2"
+                  src="Images/error.svg"
+                  alt="non conforme"
+                  width="25%"
               /></span>
               <p id="mail1">Rentrez un mail valide</p>
             </section>
@@ -91,10 +99,15 @@
                 tabindex="3"
               />
               <span class="valide"
-                ><img id="valide3" src="Images/error.svg" alt="non conforme" width="25%"
+                ><img
+                  id="valide3"
+                  src="Images/error.svg"
+                  alt="non conforme"
+                  width="25%"
               /></span>
               <p id="regex">
-                Au moins un symbole, un chiffre, ainsi que 6 caractères minimum dont une majuscule!
+                Au moins un symbole, un chiffre, ainsi que 6 caractères minimum
+                dont une majuscule!
               </p>
               <span class="couleur" id="fai">faible</span>
               <span class="niveau" id="faible">faible</span>
@@ -116,18 +129,20 @@
                 tabindex="4"
               />
               <span class="valide"
-                ><img id="valide4" src="Images/error.svg" alt="non conforme" width="25%"
+                ><img
+                  id="valide4"
+                  src="Images/error.svg"
+                  alt="non conforme"
+                  width="25%"
               /></span>
-              <p class="regex" id="egal">
-                Il n'est pas identique.
-              </p>
+              <p class="regex" id="egal">Il n'est pas identique.</p>
             </section>
             <hr />
 
             <section class="bouton">
-              <button class="submit">Création du compte</button>
-              <button class="reset">Annuler</button>
-              </section>
+              <button class="submit" id="submit">Création du compte</button>
+              <button class="reset" id="reset">Annuler</button>
+            </section>
 
             <p class="mandatory"><em>Tous les champs sont obligatoires!</em></p>
           </fieldset>
@@ -136,5 +151,6 @@
     </main>
     <footer></footer>
     <script src="./js/inscription.js"></script>
+    <script src="./js/auth.js"></script>
   </body>
 </html>

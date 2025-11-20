@@ -31,11 +31,14 @@ function init() {
     return passwordRegex.test(PW);
   }
 
+  let val = "";
+  let val2 = "";
   document.getElementById("MDP").addEventListener("input", (e) => {
-    const val = e.target.value;
+    val = e.target.value;
     if (!validatePassword(val)) {
       document.getElementById("regex").style.color = "red";
       document.getElementById("valide3").src = "./Images/error.svg";
+      verifMDP()
     } else if (val.length < 6) {
       document.getElementById("fai").style.visibility = "visible";
       document.getElementById("faible").style.visibility = "visible";
@@ -45,6 +48,7 @@ function init() {
       document.getElementById("fort").style.visibility = "hidden";
       document.getElementById("regex").style.color = "black";
       document.getElementById("valide3").src = "./Images/check.svg";
+      verifMDP()
     } else if (val.length >= 6 && val.length < 9) {
       document.getElementById("fai").style.visibility = "hidden";
       document.getElementById("faible").style.visibility = "hidden";
@@ -54,6 +58,7 @@ function init() {
       document.getElementById("fort").style.visibility = "hidden";
       document.getElementById("regex").style.color = "black";
       document.getElementById("valide3").src = "./Images/check.svg";
+      verifMDP()
     } else {
       document.getElementById("fai").style.visibility = "hidden";
       document.getElementById("faible").style.visibility = "hidden";
@@ -63,10 +68,17 @@ function init() {
       document.getElementById("fort").style.visibility = "visible";
       document.getElementById("regex").style.color = "black";
       document.getElementById("valide3").src = "./Images/check.svg";
+      verifMDP()
     }
+    
+  });
+document.getElementById("MDP2").addEventListener("input", (f) => {
+    val2 = f.target.value;
+    verifMDP()
+      });
 
-    document.getElementById("MDP2").addEventListener("input", (f) => {
-      const val2 = f.target.value;
+    function verifMDP() {
+      if (val === "" || val2 === "") return;
       if (val === val2) {
         document.getElementById("valide4").src = "./Images/check.svg";
         document.getElementById("egal").innerHTML = "Il est identique.";
@@ -76,8 +88,6 @@ function init() {
         document.getElementById("egal").innerHTML = "Il n'est pas identique.";
         document.getElementById("egal").style.color = "red";
       }
-    });
-  });
+    }
 
-  // Faire le test de la confirmation du mot de passe
 }
