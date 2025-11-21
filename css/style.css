@@ -1,13 +1,17 @@
 body {
-    width: 100vw;
+    width: 100%;
     height: auto;
     margin: 3px;
     padding: 3px 15px;
 }
 
 main {
-    width: 95vw;
+    display: flex;
+    width: 92%;
     height: auto;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 h1 {
@@ -74,7 +78,24 @@ a li {
     margin: 1%;
     padding: 2%;
     font-size: clamp(1rem, 2.5vw, 2rem);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
 }
+
+form, fieldset {
+    max-width: 900px;
+}
+
+.formIns, .formCon {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 
 .global {
     display: flex;
@@ -93,9 +114,10 @@ li.regles {
 }
 
 
-.name, .email, .connect, .confirmPW  {
+.name, .email, .connect, .confirmPW {
+    min-width: 0;
     display: grid;
-    margin: 0 5vw;
+    margin: 0 2%;
     padding: 2px;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -107,9 +129,10 @@ li.regles {
         "com com com com com com com com com com com com com com com com com com com com com . . ."
 }
 
-.password{
+.password {
+    min-width: 0;
     display: grid;
-    margin: 0 5vw;
+    margin: 0 2%;
     padding: 2px;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -203,7 +226,7 @@ p {
     flex-direction: row;
     margin: 0;
     padding: 0;
-    width: 90vw;
+    width: 100%;
     justify-content: space-around;
 }
 
@@ -211,7 +234,7 @@ p {
     border-radius: 5px;
     border: 1px;
     border-style: dotted;
-    width: 30vw;
+    width: 30%;
     height: 5vh;
     margin: 0;
     padding: 0;
@@ -226,12 +249,13 @@ p {
 .choix, .taille {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 select {
-    width: 35vw;
-    height: 3vh;
-    margin: 1vw;
+    width: 100%;
+    height: 4vh;
+    margin: 1%;
     font-size: clamp(0.5rem, 2vw, 2rem);
 }
 
@@ -240,7 +264,7 @@ select {
     flex-direction: column;
     margin: 0;
     padding: 0;
-    width: 85vw;
+    width: 100%;
     font-size: clamp(1.2rem, 1vw, 2rem);
     flex-wrap: wrap;
     align-items: center;
@@ -252,12 +276,12 @@ select {
 }
 
 table {
-    width: 90vw;
+    width: 100%;
     height: auto;
 
 }
 
-.size{
+.size {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -267,7 +291,7 @@ table {
 
 tbody {
     grid-template-rows: auto;
-    gap: 1vw;
+    gap: 1%;
     justify-content: center;
 
 }
@@ -280,13 +304,19 @@ tr {
 td {
     position: relative;
     display: flex;
-    width: 15vw;
+    width: 25%;
     height: 15vh;
     grid-template-columns: auto;
-    gap: 1vw;
+    gap: 1%;
     cursor: pointer;
     justify-content: center;
     align-items: center;
     margin: 2px;
     padding: 1px;
+}
+
+.profCon {
+    width: 50%;
+
+
 }
