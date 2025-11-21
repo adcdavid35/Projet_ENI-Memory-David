@@ -10,7 +10,9 @@ function init() {
   let testvictoire = document.querySelectorAll(".image");
   let facecachee = "./Images/question.svg";
   let cardSelect = document.querySelectorAll(".image");
+  // -----------------------------------------------------------
 
+  //---------------------------------------------------------------
   cardSelect.forEach((element) => {
     element.dataset.disabled = "false";
     element.addEventListener("click", returnCard);
@@ -54,6 +56,13 @@ function init() {
       alert(
         "VICTOIRE ! Appuyez sur la touche ESPACE pour recommencer la partie"
       );
+
+      let users = JSON.parse(localStorage.getItem("users")) || {};
+      let currentUsers = JSON.parse(localStorage.getItem("currentUsers"));
+      let email = currentUsers.email;
+      users[email].score.push(compteur);
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("currentUsers", JSON.stringify({ email }));
     }
   }
   // Mécanique de jeu
