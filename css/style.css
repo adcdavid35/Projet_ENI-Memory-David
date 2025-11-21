@@ -3,6 +3,8 @@ body {
     height: auto;
     margin: 3px;
     padding: 3px 15px;
+    flex-direction: column;
+    align-items: center;
 }
 
 main {
@@ -90,7 +92,7 @@ form, fieldset {
     max-width: 900px;
 }
 
-.formIns, .formCon {
+.formIns, .formCon, .profCon {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
@@ -249,7 +251,7 @@ p {
 .choix, .taille {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 select {
@@ -313,10 +315,4 @@ td {
     align-items: center;
     margin: 2px;
     padding: 1px;
-}
-
-.profCon {
-    width: 50%;
-
-
 }

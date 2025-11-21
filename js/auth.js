@@ -19,7 +19,7 @@ document
       nom: nom,
       password: password,
       score: [],
-      préference: {},
+      preference: {},
     };
 
     localStorage.setItem("users", JSON.stringify(users));

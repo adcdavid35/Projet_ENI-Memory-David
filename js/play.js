@@ -15,7 +15,7 @@ function init() {
     element.dataset.disabled = "false";
     element.addEventListener("click", returnCard);
   });
-// Je fais un tableau de paires, je le mélange 
+  // Je fais un tableau de paires, je le mélange
   for (let i = 1; i <= 6; i++) {
     valeurImages.push(i, i);
   }
@@ -56,7 +56,7 @@ function init() {
       );
     }
   }
-// Mécanique de jeu
+  // Mécanique de jeu
   function returnCard(event) {
     let card = event.currentTarget;
 
@@ -76,13 +76,14 @@ function init() {
       compteurFinal.innerHTML = compteur;
 
       if (coups[0] === coups[1]) {
-        disableCard(cartesCliquees[0]);
-        disableCard(cartesCliquees[1]);
+        setTimeout(() => {
+          disableCard(cartesCliquees[0]);
+          disableCard(cartesCliquees[1]);
 
-        coups = [];
-        cartesCliquees = [];
-
-        checkVictory();
+          coups = [];
+          cartesCliquees = [];
+          checkVictory();
+        }, 500);
       } else {
         setTimeout(() => {
           cartesCliquees[0].querySelector("img").src = facecachee;
@@ -90,7 +91,6 @@ function init() {
 
           coups = [];
           cartesCliquees = [];
-
           checkVictory();
         }, 500);
       }

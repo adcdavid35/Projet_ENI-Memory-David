@@ -38,78 +38,84 @@
           </ul>
         </nav>
       </aside>
-      <div class="box">
-        <div class="welcome">
-          <h2 class="titreBox">Profil</h2>
-          <img
-            src="Images/icones et avatar/Avatar.png"
-            alt="avatar du joueur"
-            width="15%"
-          />
-        </div>
-        <div class="profCon">
-          <section class="name">
-            <label for="nom">Nom d'utilisateur</label>
-            <input
-              type="text"
-              name="nom"
-              id="nom"
-              placeholder="Votre pseudo"
-              disabled
-            />
-          </section>
-          <hr />
+      <div class="xxx">
+        <form action="#" method="post" id="xxx">
+          <fieldset>
+            <div class="welcome">
+              <h2 class="titreBox">Profil</h2>
+              <img
+                src="Images/icones et avatar/Avatar.png"
+                alt="avatar du joueur"
+                width="15%"
+              />
+            </div>
+            <div class="profCon">
+              <section class="name">
+                <label for="nom">Nom d'utilisateur</label>
+                <input
+                  type="text"
+                  name="nom"
+                  id="nom"
+                  placeholder="Votre pseudo"
+                  disabled
+                />
+              </section>
+              <hr />
 
-          <section class="email">
-            <label for="mail">Email</label>
-            <input
-              type="text"
-              name="mail"
-              id="mail"
-              placeholder="Votre mail"
-              disabled
-            />
-          </section>
-          <hr />
-        </div>
+              <section class="email">
+                <label for="mail">Email</label>
+                <input
+                  type="text"
+                  name="mail"
+                  id="mail"
+                  placeholder="Votre mail"
+                  disabled
+                />
+              </section>
+              <hr />
+            </div>
 
-        <section class="choix">
-          <label for="choix">Choix du Memory :</label>
-          <select name="jeu" id="choix">
-            <option value="Default" selected disabled>
-              Choississez votre jeu :
-            </option>
-            <option value="Chiens">Chiens</option>
-            <option value="Dino">Dinosaures</option>
-            <option value="DinoNom">Dinosaures avec noms</option>
-            <option value="Ferme">Aminaux de la ferme</option>
-            <option value="Savane">Animaux de la savane</option>
-            <option value="Legumes">Légumes</option>
-            <option value="Scrabble">Scrabble</option>
-          </select>
-        </section>
-        <div class="global">
-          <img
-            src="Images/Animes/Global.png"
-            alt="tableau regroupant l'ensemble des cartes de la partie choisie"
-            width="75%"
-          />
-        </div>
+            <section class="choix">
+              <label for="choix">Choix du Memory :</label>
+              <select name="jeu" id="choix">
+                <option value="Default" selected disabled>
+                  Choississez votre jeu :
+                </option>
+                <option value="Chiens">Chiens</option>
+                <option value="Dino">Dinosaures</option>
+                <option value="DinoNom">Dinosaures avec noms</option>
+                <option value="Ferme">Aminaux de la ferme</option>
+                <option value="Savane">Animaux de la savane</option>
+                <option value="Legumes">Légumes</option>
+                <option value="Scrabble">Scrabble</option>
+              </select>
+            </section>
+            <div class="global">
+              <img
+                src="Images/Animes/Global.png"
+                alt="tableau regroupant l'ensemble des cartes de la partie choisie"
+                width="75%"
+              />
+            </div>
+            <section class="taille">
+              <label for="Taille">Taille du Memory :</label>
+              <select name="plateau" id="Taille">
+                <option value="Default" selected disabled>
+                  Taille de votre plateau de jeu:
+                </option>
+                <option value="12">4 X 3</option>
+                <option value="20">5 X 4</option>
+                <option value="30">6 X 5</option>
+              </select>
+            </section>
+            <section class="bouton">
+              <button class="submit" id="submit">
+                Enregistrez vos options
+              </button>
+            </section>
+          </fieldset>
+        </form>
 
-        <section class="taille">
-          <label for="Taille">Taille du Memory :</label>
-          <select name="plateau" id="Taille">
-            <option value="Default" selected disabled>
-              Taille de votre plateau de jeu:
-            </option>
-            <option value="12">4 X 3</option>
-            <option value="20">5 X 4</option>
-            <option value="30">6 X 5</option>
-          </select>
-        </section>
-        <section class="bouton">
-          <button class="submit">Enregistrer vos options</button>
-        </section>
         <section class="Score">
           <h3>Derniers scores :</h3>
 
