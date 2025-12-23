@@ -90,7 +90,7 @@ a li {
   color: rgb(1, 31, 10);
   border-radius: 10px;
   background: transparent;
-  border: 2px solid rgb(184, 130, 31);
+  border: 1px solid rgb(184, 130, 31);
   backdrop-filter: blur(5px);
   margin: 0.5%;
   padding: 1%;
@@ -112,15 +112,25 @@ ul {
 
 form,
 fieldset {
-  max-width: 750px;
+  max-width: 500px;
+  min-width: 350px;
+  min-height: 300px;
+  margin: 0;
+  padding: 0;
+  border-radius: 20px;
+  border: 1px solid rgb(184, 130, 31);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 10px 30px #9d7c3f;
 }
 
 .formIns,
 .formCon,
 .profCon {
+  display: grid;
   width: 100%;
-  max-width: 900px;
+  max-width: 750px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .global {
@@ -148,13 +158,13 @@ li.regles {
   margin: 0 2%;
   padding: 2px;
   align-items: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(24, 1fr);
   grid-template-rows: repeat(3, 3vh);
   gap: 5px 4px;
   grid-template-areas:
-    "titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre . . ."
-    "entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree valide valide valide"
-    "com com com com com com com com com com com com com com com com com com com com com . . .";
+    "titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre"
+    "entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree valide"
+    "com com com com com com com com com com com com com com com com com com com com com com com com";
 }
 
 .password {
@@ -164,12 +174,13 @@ li.regles {
   padding: 2px;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(3, 3vh) 1vh 1.5vh;
+  grid-template-rows: repeat(4, 3vh) 1vh 1.5vh;
   gap: 5px 4px;
   grid-template-areas:
     "titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre . . ."
-    "entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree valide valide valide"
-    "com com com com com com com com com com com com com com com com com com com com com . . ."
+    "entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree valide"
+    "com com com com com com com com com com com com com com com com com com com com com com com com"
+    "com com com com com com com com com com com com com com com com com com com com com com com com"
     ". . rouge rouge rouge rouge . . . . orange orange orange orange . . . . vert vert vert vert . ."
     ". . faible faible faible faible . . . . moyen moyen moyen moyen . . . . fort fort fort fort . .";
 }
@@ -177,17 +188,36 @@ li.regles {
 label {
   grid-area: titre;
   font-size: clamp(0.9rem, 0.1vw + 1rem, 1.5rem);
+  padding: 2px;
 }
 
 input {
+  background: transparent;
+  outline: none;
   border: 0;
-  height: 5vh;
+  border-radius: 5px;
+  height: 3vh;
   grid-area: entree;
   font-size: clamp(0.8rem, 0.1vw + 1rem, 1.3rem);
+  padding: 4px;
+}
+input::placeholder {
+  color: #133942;
+}
+
+input:hover {
+  border: 1px dotted #daa440;
+  box-shadow: 0 5px 15px #9d7c3f;
+}
+input:focus {
+  outline-style: 1px solid;
+
+  border: 1px solid#daa440;
+  box-shadow: 0 5px 15px #e7bb69;
 }
 
 span.valide {
-  min-width: 75px;
+  min-width: 30px;
   justify-items: center;
   align-items: center;
   grid-area: valide;
@@ -241,6 +271,8 @@ span.valide {
 p {
   grid-area: com;
   font-size: clamp(0.8rem, 0.1vw + 1rem, 1.3rem);
+  margin: 0;
+  padding: 2px;
 }
 
 .mandatory {
@@ -261,11 +293,11 @@ p {
 .submit,
 .reset {
   border-radius: 5px;
-  border: 1px;
-  border-style: dotted;
+  border: 1px solid rgb(184, 130, 31);
+  background-color: #e7bb69;
   width: 30%;
   height: 5vh;
-  margin: 0;
+  margin: 10px 0;
   padding: 0;
 }
 
@@ -279,13 +311,15 @@ p {
 .taille {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 select {
-  width: 100%;
+  width: 80%;
   height: 4vh;
-  margin: 1%;
+  margin: 5px;
+  padding: 0px;
+  align-self: center;
   font-size: clamp(0.5rem, 0.1vw + 1rem, 2rem);
 }
 
