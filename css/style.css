@@ -1,318 +1,432 @@
 body {
-    width: 100%;
-    height: auto;
-    margin: 3px;
-    padding: 3px 15px;
-    flex-direction: column;
-    align-items: center;
+  background-image: url("../Images/Fonddecran/savane.jpg");
+  background-attachment: fixed;
+  background-size: 100vw, 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
 }
 
 main {
-    display: flex;
-    width: 92%;
-    height: auto;
-    flex-direction: column;
-    align-items: center;
-
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
-    display: flex;
-    justify-content: center;
-    font-size: clamp(1.5rem, 4vw, 4rem);
+  display: flex;
+  justify-content: center;
+  font-size: clamp(1.2rem, 0.3vw + 1rem, 3rem);
+  margin: 8px 0;
 }
 
 h2 {
-    display: flex;
-    justify-content: left;
-    font-size: x-large;
-    font-size: clamp(1.2rem, 2vw, 2rem);
+  display: flex;
+  justify-content: left;
+  font-size: x-large;
+  font-size: clamp(1rem, 1vw + 1rem, 2rem);
+  margin: 8px 0;
 }
 
 h3 {
-    display: flex;
-    justify-content: center;
-    font-size: x-large;
-    font-size: clamp(1.5rem, 2vw, 2rem);
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  font-size: clamp(1.5rem, 0.3vw + 1rem, 2rem);
 }
 
-
 .menu {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-areas: "Accueil Incrire Connecter Profil Jouer";
-    padding-left: 0;
-    font-size: clamp(0.8rem, 3vw, 3rem);
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "Accueil Incrire Connecter Profil Jouer";
+  padding-left: 40px;
+  font-size: clamp(0.8rem, 1vw + 0.5rem, 2.5rem);
+  margin: 15px 0;
 }
 
 .Accueil {
-    grid-area: Accueil;
-    justify-self: center;
+  grid-area: Accueil;
+  display: grid;
+  justify-self: center;
+  padding: 5px 20px;
 }
 
 .Inscription {
-    grid-area: Incrire;
-    justify-self: center;
+  grid-area: Incrire;
+  justify-self: center;
+  padding: 5px 20px;
 }
 
 .Connexion {
-    grid-area: Connecter;
-    justify-self: center;
+  grid-area: Connecter;
+  justify-self: center;
+  padding: 5px 20px;
 }
 
 .Profil {
-    grid-area: Profil;
-    justify-self: center;
+  grid-area: Profil;
+  justify-self: center;
+  padding: 5px 20px;
 }
 
 .Jouer {
-    grid-area: Jouer;
-    justify-self: center;
+  grid-area: Jouer;
+  justify-self: center;
+  padding: 5px 20px;
 }
 
 a li {
-    list-style: none;
+  list-style: none;
 }
 
 .box {
-    border-radius: 10px;
-    background-color: rgba(50, 50, 50, 25%);
-    margin: 1%;
-    padding: 2%;
-    font-size: clamp(1rem, 2.5vw, 2rem);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 900px;
-    width: 100%;
+  color: rgb(1, 31, 10);
+  border-radius: 10px;
+  background: transparent;
+  border: 2px solid rgb(184, 130, 31);
+  backdrop-filter: blur(5px);
+  margin: 0.5%;
+  padding: 1%;
+  font-size: clamp(0.5rem, 1vw + 0.7rem, 1.5rem);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 30px #9d7c3f;
+}
+ul {
+  margin: 8px;
+}
+.foot {
+  color: wheat;
 }
 
-form, fieldset {
-    max-width: 900px;
+form,
+fieldset {
+  max-width: 750px;
 }
 
-.formIns, .formCon, .profCon {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
+.formIns,
+.formCon,
+.profCon {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
-
 
 .global {
-    display: flex;
-    width: 100%;
-    margin: 0;
-    justify-content: center;
+  display: flex;
+  width: 100%;
+  margin: 0;
+  justify-content: center;
 }
 
 li.regles {
-    list-style: circle;
+  list-style: circle;
 }
 
 .titreBox {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-
-.name, .email, .connect, .confirmPW {
-    min-width: 0;
-    display: grid;
-    margin: 0 2%;
-    padding: 2px;
-    align-items: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(3, 3vh);
-    gap: 5px 4px;
-    grid-template-areas:
-        "titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre . . ."
-        "entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree valide valide valide"
-        "com com com com com com com com com com com com com com com com com com com com com . . ."
+.name,
+.email,
+.connect,
+.confirmPW {
+  min-width: 0;
+  display: grid;
+  margin: 0 2%;
+  padding: 2px;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 3vh);
+  gap: 5px 4px;
+  grid-template-areas:
+    "titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre . . ."
+    "entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree valide valide valide"
+    "com com com com com com com com com com com com com com com com com com com com com . . .";
 }
 
 .password {
-    min-width: 0;
-    display: grid;
-    margin: 0 2%;
-    padding: 2px;
-    align-items: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(3, 3vh) 1vh 1.5vh;
-    gap: 5px 4px;
-    grid-template-areas:
-        "titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre . . ."
-        "entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree valide valide valide"
-        "com com com com com com com com com com com com com com com com com com com com com . . ."
-        ". . rouge rouge rouge rouge . . . . orange orange orange orange . . . . vert vert vert vert . ."
-        ". . faible faible faible faible . . . . moyen moyen moyen moyen . . . . fort fort fort fort . .";
+  min-width: 0;
+  display: grid;
+  margin: 0 2%;
+  padding: 2px;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 3vh) 1vh 1.5vh;
+  gap: 5px 4px;
+  grid-template-areas:
+    "titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre titre . . ."
+    "entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree entree valide valide valide"
+    "com com com com com com com com com com com com com com com com com com com com com . . ."
+    ". . rouge rouge rouge rouge . . . . orange orange orange orange . . . . vert vert vert vert . ."
+    ". . faible faible faible faible . . . . moyen moyen moyen moyen . . . . fort fort fort fort . .";
 }
 
 label {
-    grid-area: titre;
-    font-size: clamp(0.9rem, 1vw, 1.5rem);
+  grid-area: titre;
+  font-size: clamp(0.9rem, 0.1vw + 1rem, 1.5rem);
 }
 
 input {
-    border: 0;
-    height: 5vh;
-    grid-area: entree;
-    font-size: clamp(0.8rem, 1vw, 1.3rem);
+  border: 0;
+  height: 5vh;
+  grid-area: entree;
+  font-size: clamp(0.8rem, 0.1vw + 1rem, 1.3rem);
 }
 
 span.valide {
-    min-width: 75px;
-    justify-items: center;
-    align-items: center;
-    grid-area: valide;
+  min-width: 75px;
+  justify-items: center;
+  align-items: center;
+  grid-area: valide;
 }
 
 .couleur#fai {
-    visibility: hidden;
-    grid-area: rouge;
-    font-size: 3px;
-    color: red;
-    background-color: red;
+  visibility: hidden;
+  grid-area: rouge;
+  font-size: 3px;
+  color: red;
+  background-color: red;
 }
 
 .couleur#moy {
-    visibility: hidden;
-    grid-area: orange;
-    font-size: 3px;
-    color: orange;
-    background-color: orange;
+  visibility: hidden;
+  grid-area: orange;
+  font-size: 3px;
+  color: orange;
+  background-color: orange;
 }
 
 .couleur#for {
-    visibility: hidden;
-    grid-area: vert;
-    font-size: 3px;
-    color: green;
-    background-color: green;
+  visibility: hidden;
+  grid-area: vert;
+  font-size: 3px;
+  color: green;
+  background-color: green;
 }
 
 .niveau#faible {
-    visibility: hidden;
-    justify-self: center;
-    grid-area: faible;
-    color: red;
+  visibility: hidden;
+  justify-self: center;
+  grid-area: faible;
+  color: red;
 }
 
 .niveau#moyen {
-    visibility: hidden;
-    justify-self: center;
-    grid-area: moyen;
-    color: orange;
+  visibility: hidden;
+  justify-self: center;
+  grid-area: moyen;
+  color: orange;
 }
 
 .niveau#fort {
-    visibility: hidden;
-    justify-self: center;
-    grid-area: fort;
-    color: green;
+  visibility: hidden;
+  justify-self: center;
+  grid-area: fort;
+  color: green;
 }
 
 p {
-    grid-area: com;
-    font-size: clamp(0.8rem, 1vw, 1.3rem);
+  grid-area: com;
+  font-size: clamp(0.8rem, 0.1vw + 1rem, 1.3rem);
 }
 
 .mandatory {
-    display: flex;
-    justify-content: center;
-    font-size: clamp(0.8rem, 1vw, 1rem);
+  display: flex;
+  justify-content: center;
+  font-size: clamp(0.8rem, 0.1vw + 1rem, 1rem);
 }
 
 .bouton {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: space-around;
 }
 
-.submit, .reset {
-    border-radius: 5px;
-    border: 1px;
-    border-style: dotted;
-    width: 30%;
-    height: 5vh;
-    margin: 0;
-    padding: 0;
+.submit,
+.reset {
+  border-radius: 5px;
+  border: 1px;
+  border-style: dotted;
+  width: 30%;
+  height: 5vh;
+  margin: 0;
+  padding: 0;
 }
 
 .welcome {
-    display: flex;
-    flex-direction: column;
-    align-items: center
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.choix, .taille {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.choix,
+.taille {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 select {
-    width: 100%;
-    height: 4vh;
-    margin: 1%;
-    font-size: clamp(0.5rem, 2vw, 2rem);
+  width: 100%;
+  height: 4vh;
+  margin: 1%;
+  font-size: clamp(0.5rem, 0.1vw + 1rem, 2rem);
 }
 
 .rules {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    font-size: clamp(1.2rem, 1vw, 2rem);
-    flex-wrap: wrap;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: clamp(0.8rem, 0.1vw + 1rem, 1.5rem);
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .rul {
-    height: 1vh;
-    font-size: clamp(0.8rem, 2vw, 3rem);
+  height: 1vh;
+  font-size: clamp(0.8rem, 2vw, 3rem);
 }
 
 table {
-    width: 100%;
-    height: auto;
-
+  width: 100%;
+  height: auto;
 }
 
 .size {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-
 tbody {
-    grid-template-rows: auto;
-    gap: 1%;
-    justify-content: center;
-
+  grid-template-rows: auto;
+  gap: 1%;
+  justify-content: center;
 }
 
 tr {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 td {
-    position: relative;
+  position: relative;
+  display: flex;
+  width: 25%;
+  height: 15vh;
+  grid-template-columns: auto;
+  gap: 1%;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+  padding: 1px;
+}
+a {
+  outline: none;
+  text-decoration: none;
+}
+a:link {
+  color: #116372;
+  text-decoration: none;
+}
+a:visited {
+  color: #116372;
+  text-decoration: none;
+}
+
+a:focus {
+  border-bottom: 1px solid;
+  background: transparent;
+}
+
+a:hover {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px #133942;
+}
+
+a:active {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px #226d80;
+  border-bottom: 1px solid;
+  background: transparent;
+  backdrop-filter: blur(15px);
+  transform: scale(110%);
+}
+
+.fofo {
+  color: wheat;
+}
+.fofo:link {
+  color: rgb(184, 130, 31);
+  text-decoration: none;
+}
+.fofo:visited {
+  color: rgb(184, 130, 31);
+  text-decoration: none;
+}
+a:focus {
+  border-bottom: 1px solid;
+  background: transparent;
+}
+
+.fofo:hover {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgb(184, 130, 31);
+}
+
+.fofo:active {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgb(184, 130, 31);
+  border-bottom: 1px solid;
+  background: transparent;
+  backdrop-filter: blur(15px);
+  transform: scale(105%);
+}
+
+@media (orientation: portrait) {
+  body {
+    overflow: hidden;
+  }
+
+  .landscape-only {
+    display: none;
+  }
+
+  .rotate-message {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    color: #fff;
     display: flex;
-    width: 25%;
-    height: 15vh;
-    grid-template-columns: auto;
-    gap: 1%;
-    cursor: pointer;
     justify-content: center;
     align-items: center;
-    margin: 2px;
-    padding: 1px;
+    text-align: center;
+    z-index: 9999;
+    font-size: 1.3rem;
+  }
+}
+
+@media (orientation: landscape) {
+  .rotate-message {
+    display: none;
+  }
 }
