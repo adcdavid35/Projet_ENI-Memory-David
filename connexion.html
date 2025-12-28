@@ -4,14 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="description"
-      content="Formulaire de connexion au jeu Memory de l'ENI."
-    />
+    <meta name="description" content="Formulaire de connexion au jeu Memory de l'ENI." />
     <title>Connexion</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
+  <body id="body">
     <header>
       <div class="entete">
         <h1>ENI - <strong>Memory</strong> - Connecter</h1>
@@ -21,18 +18,10 @@
       <aside>
         <nav>
           <ul class="menu">
-            <a href="index.html"
-              ><li class="Accueil" title="Accueil">Accueil</li></a
-            >
-            <a href="inscription.html"
-              ><li class="Inscription" title="S'incrire">S'incrire</li></a
-            >
-            <a href="connexion.html"
-              ><li class="Connexion" title="Se connecter">Se connecter</li></a
-            >
-            <a href="profil.html"
-              ><li class="Profil" title="Profil">Profil</li></a
-            >
+            <a href="index.html"><li class="Accueil" title="Accueil">Accueil</li></a>
+            <a href="inscription.html"><li class="Inscription" title="S'incrire">S'incrire</li></a>
+            <a href="connexion.html"><li class="Connexion" title="Se connecter">Se connecter</li></a>
+            <a href="profil.html"><li class="Profil" title="Profil">Profil</li></a>
             <a href="play.html"><li class="Jouer" title="Jouer">Jouer</li></a>
           </ul>
         </nav>
@@ -44,34 +33,19 @@
 
             <section class="email">
               <label for="mail">Entrez votre adresse mail</label>
-              <input
-                type="text"
-                name="mail"
-                id="mail"
-                placeholder="Votre mail"
-                required
-                autofocus
-                tabindex="1"
-              />
+              <input type="text" name="mail" id="mail" placeholder="Votre mail" required autofocus tabindex="1" />
             </section>
             <hr />
 
             <section class="connect">
               <label for="MDP">Mot de passe</label>
-              <input
-                type="text"
-                name="MDP"
-                id="MDP"
-                placeholder="Votre mot de passe"
-                required
-                tabindex="2"
-              />
+              <input type="text" name="MDP" id="MDP" placeholder="Votre mot de passe" required tabindex="2" />
             </section>
             <hr />
 
             <section class="bouton">
-              <button class="submit">Se connecter</button>
-              <button class="reset">Annuler</button>
+              <button type="submit" class="submit" id="submit">Se connecter</button>
+              <button type="reset" class="reset" id="reset">Annuler</button>
             </section>
           </fieldset>
         </form>

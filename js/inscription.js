@@ -1,4 +1,7 @@
-window.onload = init;
+let fond = localStorage.getItem("fond");
+if (fond) {
+  document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + fond + ".png')";
+}
 
 function init() {
   document.getElementById("nom").addEventListener("input", (e) => {
@@ -26,8 +29,7 @@ function init() {
   });
 
   function validatePassword(PW) {
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,}$/;
     return passwordRegex.test(PW);
   }
 
@@ -38,7 +40,7 @@ function init() {
     if (!validatePassword(val)) {
       document.getElementById("regex").style.color = "red";
       document.getElementById("valide3").src = "./Images/error.svg";
-      verifMDP()
+      verifMDP();
     } else if (val.length < 6) {
       document.getElementById("fai").style.visibility = "visible";
       document.getElementById("faible").style.visibility = "visible";
@@ -48,7 +50,7 @@ function init() {
       document.getElementById("fort").style.visibility = "hidden";
       document.getElementById("regex").style.color = "black";
       document.getElementById("valide3").src = "./Images/check.svg";
-      verifMDP()
+      verifMDP();
     } else if (val.length >= 6 && val.length < 9) {
       document.getElementById("fai").style.visibility = "hidden";
       document.getElementById("faible").style.visibility = "hidden";
@@ -58,7 +60,7 @@ function init() {
       document.getElementById("fort").style.visibility = "hidden";
       document.getElementById("regex").style.color = "black";
       document.getElementById("valide3").src = "./Images/check.svg";
-      verifMDP()
+      verifMDP();
     } else {
       document.getElementById("fai").style.visibility = "hidden";
       document.getElementById("faible").style.visibility = "hidden";
@@ -68,26 +70,28 @@ function init() {
       document.getElementById("fort").style.visibility = "visible";
       document.getElementById("regex").style.color = "black";
       document.getElementById("valide3").src = "./Images/check.svg";
-      verifMDP()
+      verifMDP();
     }
-    
   });
-document.getElementById("MDP2").addEventListener("input", (f) => {
+  document.getElementById("MDP2").addEventListener("input", (f) => {
     val2 = f.target.value;
-    verifMDP()
-      });
+    verifMDP();
+  });
 
-    function verifMDP() {
-      if (val === "" || val2 === "") return;
-      if (val === val2) {
-        document.getElementById("valide4").src = "./Images/check.svg";
-        document.getElementById("egal").innerHTML = "Il est identique.";
-        document.getElementById("egal").style.color = "green";
-      } else {
-        document.getElementById("valide4").src = "./Images/error.svg";
-        document.getElementById("egal").innerHTML = "Il n'est pas identique.";
-        document.getElementById("egal").style.color = "red";
-      }
+  function verifMDP() {
+    if (val === "" || val2 === "") return;
+    if (val === val2) {
+      document.getElementById("valide4").src = "./Images/check.svg";
+      document.getElementById("egal").innerHTML = "Il est identique.";
+      document.getElementById("egal").style.color = "green";
+    } else {
+      document.getElementById("valide4").src = "./Images/error.svg";
+      document.getElementById("egal").innerHTML = "Il n'est pas identique.";
+      document.getElementById("egal").style.color = "red";
     }
+  }
 
+  document.getElementById("reset").addEventListener("click", () => {
+    document.getElementById("formIns").reset();
+  });
 }

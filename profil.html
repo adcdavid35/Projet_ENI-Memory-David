@@ -8,7 +8,7 @@
     <meta name="description" content="Votre profil dans le jeu Memory de l'ENI." />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
+  <body id="body">
     <header>
       <div class="entete">
         <h1>ENI - <strong>Memory</strong> - Profil</h1>
@@ -37,38 +37,31 @@
             <div class="profCon">
               <section class="name">
                 <label for="nom">Nom d'utilisateur</label>
-                <input type="text" name="nom" id="nom" placeholder="Votre pseudo" disabled />
+                <input type="text" name="nom" id="nom" placeholder="Votre pseudo" readonly />
               </section>
+
               <hr />
 
               <section class="email">
                 <label for="mail">Email</label>
-                <input type="text" name="mail" id="mail" placeholder="Votre mail" disabled />
+                <input type="text" name="mail" id="mail" placeholder="Votre mail" readonly />
               </section>
               <hr />
             </div>
+            <section class="bouton">
+              <button type="reset" class="reset" id="reset">Supprimer votre compte</button>
+            </section>
 
             <section class="choix">
               <label for="choix">Choix du Memory :</label>
-              <select name="jeu" id="choix">
-                <option value="Default" selected disabled>Choississez votre jeu :</option>
-                <option value="Chiens">Chiens</option>
-                <option value="Dino">Dinosaures</option>
-                <option value="Ferme">Aminaux de la ferme</option>
-                <option value="Savane">Animaux de la savane</option>
-              </select>
+              <select name="jeu" id="choix"></select>
             </section>
             <div class="global">
-              <img src="Images/Savane/global.jpg" alt="tableau regroupant l'ensemble des cartes de la partie choisie" width="75%" />
+              <img id="global" src="Images/Savane/global.png" alt="tableau regroupant l'ensemble des cartes de la partie choisie" width="75%" />
             </div>
             <section class="taille">
               <label for="Taille">Taille du Memory :</label>
-              <select name="plateau" id="Taille">
-                <option value="Default" selected disabled>Taille de votre plateau de jeu:</option>
-                <option value="12">4 X 3</option>
-                <option value="20">5 X 4</option>
-                <option value="30">6 X 5</option>
-              </select>
+              <select name="plateau" id="Taille"></select>
             </section>
             <section class="bouton">
               <button class="submit" id="submit">Enregistrez vos options</button>

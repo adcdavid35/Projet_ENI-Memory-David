@@ -1,5 +1,10 @@
 window.onload = init;
 
+let fond = localStorage.getItem("fond");
+if (fond) {
+  document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + fond + ".png')";
+}
+
 function init() {
   let tableauImage = new Map();
   let valeurImages = [];
@@ -10,6 +15,13 @@ function init() {
   let testvictoire = document.querySelectorAll(".image");
   let facecachee = "./Images/question.svg";
   let cardSelect = document.querySelectorAll(".image");
+
+  let current = JSON.parse(localStorage.getItem("currentUsers"));
+  let users = JSON.parse(localStorage.getItem("users"));
+
+  let email = current?.email;
+  let memory = users?.[email]?.preference?.memory;
+
   // -----------------------------------------------------------
 
   //---------------------------------------------------------------
@@ -48,14 +60,10 @@ function init() {
   }
 
   function checkVictory() {
-    let victoire = Array.from(testvictoire).every(
-      (element) => element.dataset.disabled === "true"
-    );
+    let victoire = Array.from(testvictoire).every((element) => element.dataset.disabled === "true");
 
     if (victoire) {
-      alert(
-        "VICTOIRE ! Appuyez sur la touche ESPACE pour recommencer la partie"
-      );
+      alert("VICTOIRE ! Appuyez sur la touche ESPACE pour recommencer la partie");
 
       let users = JSON.parse(localStorage.getItem("users")) || {};
       let currentUsers = JSON.parse(localStorage.getItem("currentUsers"));
@@ -75,7 +83,8 @@ function init() {
 
     let img = card.querySelector("img");
 
-    img.src = "./Images/Chiens/" + tableauImage.get(card) + ".webp";
+    // choix du jeu venant du profil
+    img.src = "./Images/" + memory + "/" + tableauImage.get(card) + ".png";
 
     coups.push(tableauImage.get(card));
     cartesCliquees.push(card);
