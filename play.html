@@ -13,6 +13,9 @@
       <div class="entete">
         <h1>ENI - <strong>Memory</strong> - Jouer</h1>
       </div>
+      <section class="deconnect">
+        <button type="reset" class="reset2" id="deconnect">Se déconnecter</button>
+      </section>
     </header>
     <main>
       <aside>
@@ -28,7 +31,20 @@
       </aside>
       <div class="box">
         <section class="score">
-          <h3>Derniers scores :</h3>
+          <h3>Les 3 meilleurs scores avec cette taille de plateau:</h3>
+          <section>
+            <table id="score">
+              <thead>
+                <tr class="cell">
+                  <th class="cellTD">Pseudo</th>
+                  <th class="cellTD">Score</th>
+                  <th class="cellTD">Jeu</th>
+                  <th class="cellTD">Date</th>
+                </tr>
+              </thead>
+              <tbody id="best"></tbody>
+            </table>
+          </section>
         </section>
         <section class="rules2">
           <p class="rul2">Tentez de gagner avec le moins d'essais possibles.</p>
@@ -45,6 +61,7 @@
       </div>
     </main>
     <footer></footer>
+    <script src="./js/memory.js"></script>
     <script src="./js/play.js" defer></script>
   </body>
 </html>

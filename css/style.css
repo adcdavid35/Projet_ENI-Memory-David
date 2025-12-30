@@ -19,13 +19,32 @@ main {
   align-items: center;
 }
 
+header {
+  position: relative;
+}
+
 h1 {
   color: wheat;
   display: flex;
-  justify-content: center;
-  font-size: clamp(1.2rem, 0.3vw + 1rem, 3rem);
-  margin: 8px 0;
+
+  justify-self: center;
+  font-size: clamp(2rem, 0.3vw + 1.5rem, 3rem);
+  margin: 5px 0 0 0;
   mix-blend-mode: lighten;
+}
+
+.reset2 {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  border-radius: 5px;
+  justify-self: end;
+  border: 1px solid rgb(184, 130, 31);
+  background-color: #e7bb69;
+  width: fit-content;
+  height: 5vh;
+  margin: 8px 0;
+  padding: 0 5px;
 }
 
 h2 {
@@ -41,7 +60,7 @@ h3 {
   display: flex;
   justify-content: center;
   font-size: x-large;
-  font-size: clamp(1.5rem, 0.3vw + 1rem, 2rem);
+  font-size: clamp(1.4rem, 0.3vw + 1rem, 2rem);
   margin: 5px 0;
 }
 
@@ -52,7 +71,7 @@ h3 {
   grid-template-areas: "Accueil Incrire Connecter Profil Jouer";
   padding-left: 40px;
   font-size: clamp(0.8rem, 1vw + 0.5rem, 2.5rem);
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
 .Accueil {
@@ -461,6 +480,33 @@ a:focus {
   transform: scale(105%);
 }
 
+#caption {
+  text-decoration: underline;
+}
+
+.cell {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  width: auto;
+  height: auto;
+
+  margin: 0;
+  padding: 1px;
+}
+.cellTD {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  border: 1px solid rgb(184, 130, 31);
+}
+th {
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 85%;
+  font-weight: bold;
+}
 @media (orientation: portrait) {
   body {
     overflow: hidden;
@@ -488,8 +534,4 @@ a:focus {
   .rotate-message {
     display: none;
   }
-}
-
-#caption {
-  text-decoration: underline;
 }

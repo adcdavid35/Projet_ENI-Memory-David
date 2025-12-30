@@ -1,10 +1,3 @@
-let configJeu = JSON.parse(localStorage.getItem("config")) || {};
-let fond = configJeu.fond;
-
-if (fond) {
-  document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + fond + ".png')";
-}
-
 // Partie authentification sur inscription.HTML
 
 document.getElementById("formIns")?.addEventListener("submit", async function (e) {
@@ -14,6 +7,12 @@ document.getElementById("formIns")?.addEventListener("submit", async function (e
   let email = document.getElementById("mail").value;
   let password = document.getElementById("MDP").value;
   let users = JSON.parse(localStorage.getItem("users")) || {};
+
+  const pseudoExiste = Object.values(users).some((user) => user.nom === nom);
+  if (pseudoExiste) {
+    alert("Pseudo déjà utilisé");
+    return;
+  }
 
   if (users[email]) {
     alert("Cet email existe déjà!");
@@ -31,7 +30,8 @@ document.getElementById("formIns")?.addEventListener("submit", async function (e
   localStorage.setItem("currentUsers", JSON.stringify({ email: email }));
 
   alert("Vous êtes inscrit!");
-  window.location.href = "profil.html";
+
+  window.location.href = "connexion.html";
 });
 
 // Partie connexion sur connexion.HTML

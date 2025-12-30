@@ -1,21 +1,16 @@
 window.onload = init;
 let scores = {
-  plateau12: [],
-  plateau16: [],
-  plateau20: [],
-  plateau30: [],
-  plateau36: [],
-  plateau40: [],
+  plateau12: [{}],
+  plateau16: [{}],
+  plateau20: [{}],
+  plateau30: [{}],
+  plateau36: [{}],
+  plateau40: [{}],
 };
 
 if (!localStorage.getItem("scores")) {
   localStorage.setItem("scores", JSON.stringify(scores));
 }
-
-let configJeu = JSON.parse(localStorage.getItem("config")) || {};
-let fond = configJeu.fond;
-let label = configJeu.label;
-let grille = configJeu.grille;
 
 let col = parseInt(grille.split(" X ")[0]);
 let row = parseInt(grille.split(" X ")[1]);
@@ -23,9 +18,8 @@ let myImage = new Image();
 myImage.src = "./Images/question.svg";
 myImage.className = "size";
 
-// modifie le fond d'écran en fonction des préférences
+// affiche le titre du jeu
 if (fond) {
-  document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + fond + ".png')";
   document.getElementById("caption").innerText = "Les " + label.toLowerCase() + " :";
 }
 
@@ -71,6 +65,10 @@ function init() {
   let email = current?.email;
   let memory = users?.[email]?.preference?.memory;
 
+  if (!current) {
+    alert("Veuillez vous connecter!");
+    window.location.href = "connexion.html";
+  }
   cardSelect.forEach((element) => {
     element.dataset.disabled = "false";
     element.addEventListener("click", returnCard);
@@ -175,6 +173,61 @@ function init() {
 
 function majScore(nom, compteur, grille, memory) {
   let scores = JSON.parse(localStorage.getItem("scores"));
+  let plat = findPlateau(grille);
+
+  scores[plat].push({ player: nom, score: compteur, jeu: memory, date: new Date().toLocaleDateString("fr-FR") });
+
+  scores[plat].sort((a, b) => a.score - b.score);
+
+  scores[plat] = scores[plat].slice(0, 3);
+  localStorage.setItem("scores", JSON.stringify(scores));
+}
+
+function showScore() {
+  let scores = JSON.parse(localStorage.getItem("scores"));
+  let plat = findPlateau(grille);
+
+  // génère le plateau de jeu en fonction des préférences
+
+  // récupère <table> et <tbody>
+  const tblBody = document.getElementById("best");
+
+  // création de toutes les cellules
+
+  if (scores[plat].length != 0) {
+    for (let i = 0; i < scores[plat].length; i++) {
+      // crée une ligne de tableau
+      const ligne2 = document.createElement("tr");
+      ligne2.className = "cell";
+      // Crée un élément <td>
+      let cellPlayer = document.createElement("td");
+      cellPlayer.className = "cellTD";
+      cellPlayer.textContent = scores[plat][i].player;
+      ligne2.appendChild(cellPlayer);
+
+      let cellScore = document.createElement("td");
+      cellScore.className = "cellTD";
+      cellScore.textContent = scores[plat][i].score;
+      ligne2.appendChild(cellScore);
+
+      let cellGame = document.createElement("td");
+      cellGame.className = "cellTD";
+      cellGame.textContent = scores[plat][i].jeu;
+      ligne2.appendChild(cellGame);
+
+      let cellDate = document.createElement("td");
+      cellDate.className = "cellTD";
+      cellDate.textContent = scores[plat][i].date;
+      ligne2.appendChild(cellDate);
+      // ajoute la ligne à la fin du corps du tableau
+      tblBody.appendChild(ligne2);
+    }
+  }
+}
+
+showScore();
+
+function findPlateau(grille) {
   let plateau;
   switch (grille) {
     case "4 X 3":
@@ -196,11 +249,5 @@ function majScore(nom, compteur, grille, memory) {
       plateau = "plateau40";
       break;
   }
-
-  scores[plateau].push({ player: nom, score: compteur, jeu: memory, date: new Date().toLocaleDateString("fr-FR") });
-
-  scores[plateau].sort((a, b) => a.score - b.score);
-
-  scores[plateau] = scores[plateau].slice(0, 3);
-  localStorage.setItem("scores", JSON.stringify(scores));
+  return plateau;
 }

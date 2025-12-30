@@ -1,9 +1,3 @@
-let configJeu = JSON.parse(localStorage.getItem("config")) || {};
-let fond = configJeu.fond;
-
-if (fond) {
-  document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + fond + ".png')";
-}
 init();
 function init() {
   document.getElementById("nom").addEventListener("input", (e) => {
@@ -51,7 +45,7 @@ function init() {
       document.getElementById("for").style.visibility = "hidden";
       document.getElementById("fort").style.visibility = "hidden";
       document.getElementById("regex").style.color = "black";
-      document.getElementById("valide3").src = "./Images/check.svg";
+      document.getElementById("valide3").src = "./Images/error.svg";
       verifMDP();
     } else if (val.length >= 6 && val.length < 9) {
       document.getElementById("fai").style.visibility = "hidden";

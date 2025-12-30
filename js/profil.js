@@ -1,11 +1,3 @@
-window.addEventListener("load", Profil);
-let configJeu = JSON.parse(localStorage.getItem("config")) || {};
-let fond = configJeu.fond;
-
-if (fond) {
-  document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + fond + ".png')";
-}
-
 //select choix de jeu
 const select = document.getElementById("choix");
 const data = [
@@ -72,6 +64,7 @@ document.getElementById("xxx")?.addEventListener("submit", async function (e) {
   localStorage.setItem("currentUsers", JSON.stringify({ email }));
 
   saveConfig();
+  window.location.href = "play.html";
 });
 
 // affichage du profil connecté dans les inputs
@@ -87,7 +80,7 @@ function Profil() {
   document.getElementById("nom").value = user.nom;
   document.getElementById("mail").value = email;
 }
-
+Profil();
 // modification des images en fonction du choix dans le select
 
 document.getElementById("choix").addEventListener("change", () => {
