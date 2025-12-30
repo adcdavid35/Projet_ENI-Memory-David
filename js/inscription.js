@@ -4,7 +4,7 @@ let fond = configJeu.fond;
 if (fond) {
   document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + fond + ".png')";
 }
-
+init();
 function init() {
   document.getElementById("nom").addEventListener("input", (e) => {
     if (e.target.value.length < 3) {
@@ -92,8 +92,8 @@ function init() {
       document.getElementById("egal").style.color = "red";
     }
   }
-
-  document.getElementById("reset").addEventListener("click", () => {
-    document.getElementById("formIns").reset();
-  });
 }
+
+document.getElementById("reset").addEventListener("click", () => {
+  document.getElementById("formIns").reset();
+});
