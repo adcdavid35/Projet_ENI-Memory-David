@@ -1,6 +1,7 @@
 window.addEventListener("load", Profil);
+let configJeu = JSON.parse(localStorage.getItem("config")) || {};
+let fond = configJeu.fond;
 
-let fond = localStorage.getItem("fond");
 if (fond) {
   document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + fond + ".png')";
 }
@@ -67,9 +68,10 @@ document.getElementById("xxx")?.addEventListener("submit", async function (e) {
   }
 
   users[email].preference = { memory, taille };
-
   localStorage.setItem("users", JSON.stringify(users));
   localStorage.setItem("currentUsers", JSON.stringify({ email }));
+
+  saveConfig();
 });
 
 // affichage du profil connecté dans les inputs
@@ -91,7 +93,6 @@ function Profil() {
 document.getElementById("choix").addEventListener("change", () => {
   document.getElementById("global").src = "Images/" + document.getElementById("choix").value + "/global.png";
   document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + document.getElementById("choix").value + ".png')";
-  localStorage.setItem("fond", document.getElementById("choix").value);
 });
 
 // bouton supprimer compte
@@ -105,14 +106,20 @@ document.getElementById("reset").addEventListener("click", function (e) {
     alert("Utilisateur non trouvé !");
     return;
   }
-
   delete users[currentUserEmail];
   localStorage.setItem("users", JSON.stringify(users));
   localStorage.removeItem("currentUsers");
 
   alert("Votre compte a été supprimé !");
+
   document.getElementById("nom").value = "";
   document.getElementById("mail").value = "";
-
   window.location.href = "inscription.html";
 });
+
+function saveConfig() {
+  configJeu.fond = select.value;
+  configJeu.label = select.selectedOptions[0].textContent;
+  configJeu.grille = select2.selectedOptions[0].textContent;
+  localStorage.setItem("config", JSON.stringify(configJeu));
+}

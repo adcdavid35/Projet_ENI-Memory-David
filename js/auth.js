@@ -1,4 +1,12 @@
+let configJeu = JSON.parse(localStorage.getItem("config")) || {};
+let fond = configJeu.fond;
+
+if (fond) {
+  document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + fond + ".png')";
+}
+
 // Partie authentification sur inscription.HTML
+
 document.getElementById("formIns")?.addEventListener("submit", async function (e) {
   e.preventDefault();
 
@@ -26,11 +34,6 @@ document.getElementById("formIns")?.addEventListener("submit", async function (e
   window.location.href = "profil.html";
 });
 
-let fond = localStorage.getItem("fond");
-if (fond) {
-  document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + fond + ".png')";
-}
-
 // Partie connexion sur connexion.HTML
 
 document.getElementById("formConnect")?.addEventListener("submit", async function (e) {
@@ -40,7 +43,6 @@ document.getElementById("formConnect")?.addEventListener("submit", async functio
   let password = document.getElementById("MDP").value;
 
   let users = JSON.parse(localStorage.getItem("users")) || {};
-  console.log("users=" + users);
 
   if (users[email]) {
     if (password === users[email].password) {

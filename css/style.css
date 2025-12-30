@@ -489,3 +489,7 @@ a:focus {
     display: none;
   }
 }
+
+#caption {
+  text-decoration: underline;
+}

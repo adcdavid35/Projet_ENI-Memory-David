@@ -1,4 +1,6 @@
-let fond = localStorage.getItem("fond");
+let configJeu = JSON.parse(localStorage.getItem("config")) || {};
+let fond = configJeu.fond;
+
 if (fond) {
   document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + fond + ".png')";
 }
