@@ -30,54 +30,74 @@
           </ul>
         </nav>
       </aside>
-      <div class="xxx">
-        <form action="#" method="post" id="xxx">
-          <fieldset>
-            <div class="welcome">
-              <h2 class="titreBox">Profil</h2>
-              <img src="Images/icones et avatar/Avatar.png" alt="avatar du joueur" width="15%" />
-            </div>
-            <div class="profCon">
-              <section class="name">
-                <label for="nom">Nom d'utilisateur</label>
-                <input type="text" name="nom" id="nom" placeholder="Votre pseudo" readonly />
+      <div class="binome">
+        <div class="xxx">
+          <form action="#" method="post" id="xxx">
+            <fieldset>
+              <div class="welcome">
+                <h2 class="titreBox">Profil</h2>
+                <img src="Images/icones et avatar/Avatar.png" alt="avatar du joueur" width="15%" />
+              </div>
+              <div class="profCon">
+                <section class="name">
+                  <label for="nom">Nom d'utilisateur</label>
+                  <input type="text" name="nom" id="nom" placeholder="Votre pseudo" readonly />
+                </section>
+
+                <hr />
+
+                <section class="email">
+                  <label for="mail">Email</label>
+                  <input type="text" name="mail" id="mail" placeholder="Votre mail" readonly />
+                </section>
+                <hr />
+              </div>
+              <section class="bouton">
+                <button type="reset" class="reset" id="reset">Supprimer votre compte</button>
               </section>
 
-              <hr />
-
-              <section class="email">
-                <label for="mail">Email</label>
-                <input type="text" name="mail" id="mail" placeholder="Votre mail" readonly />
+              <section class="choix">
+                <label for="choix" id="choi"></label>
+                <select name="jeu" id="choix"></select>
               </section>
-              <hr />
-            </div>
-            <section class="bouton">
-              <button type="reset" class="reset" id="reset">Supprimer votre compte</button>
+              <div class="global">
+                <img id="global" src="Images/Fonddecran/Default.png" alt="tableau regroupant l'ensemble des cartes de la partie choisie" width="75%" />
+              </div>
+              <section class="taille">
+                <label for="Taille"></label>
+                <select name="plateau" id="Taille"></select>
+              </section>
+              <section class="bouton">
+                <button class="submit" id="submit">Enregistrez vos options</button>
+              </section>
+            </fieldset>
+          </form>
+        </div>
+        <div class="xxx">
+          <section class="ScorePlayer">
+            <h3>Vos scores en fonction des plateaux:</h3>
+            <section>
+              <table id="ScorePlayer">
+                <thead>
+                  <tr class="cell">
+                    <th class="cellTD">Score</th>
+                    <th class="cellTD">Plateau</th>
+                    <th class="cellTD">Jeu</th>
+                    <th class="cellTD">Date</th>
+                  </tr>
+                </thead>
+                <tbody id="bestPlayer"></tbody>
+              </table>
             </section>
-
-            <section class="choix">
-              <label for="choix" id="choi"></label>
-              <select name="jeu" id="choix"></select>
-            </section>
-            <div class="global">
-              <img id="global" src="Images/Fonddecran/Default.png" alt="tableau regroupant l'ensemble des cartes de la partie choisie" width="75%" />
-            </div>
-            <section class="taille">
-              <label for="Taille"></label>
-              <select name="plateau" id="Taille"></select>
-            </section>
-            <section class="bouton">
-              <button class="submit" id="submit">Enregistrez vos options</button>
-            </section>
-          </fieldset>
-        </form>
-
-        <section class="Score">
-          <h3>Derniers scores :</h3>
-
-          <!-- faire le tableau des scores avec JS -->
-        </section>
+          </section>
+        </div>
       </div>
+      <div class="rotate-message">
+        Pour une meilleure expérience du jeu, <br />
+        tournez votre téléphone en mode paysage <br />
+        SVP.
+      </div>
+      <div class="landscape-only"></div>
     </main>
     <footer></footer>
 

@@ -1,4 +1,5 @@
 window.onload = init;
+let plat = findPlateau(grille);
 let scores = {
   plateau12: [{}],
   plateau16: [{}],
@@ -114,9 +115,10 @@ function init() {
       let users = JSON.parse(localStorage.getItem("users")) || {};
       let currentUsers = JSON.parse(localStorage.getItem("currentUsers"));
       let email = currentUsers.email;
-      users[email].score.push([compteur, grille, memory]);
 
-      majScore(users[email].nom, compteur, grille, memory);
+      users[email].score.push({ score: compteur, plateau: grille, jeu: memory, date: new Date().toLocaleDateString("fr-FR") });
+
+      majScore(users[email].nom, compteur, memory);
 
       localStorage.setItem("users", JSON.stringify(users));
       localStorage.setItem("currentUsers", JSON.stringify({ email }));
@@ -171,9 +173,8 @@ function init() {
   });
 }
 
-function majScore(nom, compteur, grille, memory) {
+function majScore(nom, compteur, memory) {
   let scores = JSON.parse(localStorage.getItem("scores"));
-  let plat = findPlateau(grille);
 
   scores[plat].push({ player: nom, score: compteur, jeu: memory, date: new Date().toLocaleDateString("fr-FR") });
 
@@ -185,11 +186,9 @@ function majScore(nom, compteur, grille, memory) {
 
 function showScore() {
   let scores = JSON.parse(localStorage.getItem("scores"));
-  let plat = findPlateau(grille);
 
   // génère le plateau de jeu en fonction des préférences
-
-  // récupère <table> et <tbody>
+  // récupère <tbody>
   const tblBody = document.getElementById("best");
 
   // création de toutes les cellules
@@ -226,28 +225,3 @@ function showScore() {
 }
 
 showScore();
-
-function findPlateau(grille) {
-  let plateau;
-  switch (grille) {
-    case "4 X 3":
-      plateau = "plateau12";
-      break;
-    case "4 X 4":
-      plateau = "plateau16";
-      break;
-    case "5 X 4":
-      plateau = "plateau20";
-      break;
-    case "6 X 5":
-      plateau = "plateau30";
-      break;
-    case "6 X 6":
-      plateau = "plateau36";
-      break;
-    case "8 X 5":
-      plateau = "plateau40";
-      break;
-  }
-  return plateau;
-}

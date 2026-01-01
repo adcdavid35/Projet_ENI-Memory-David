@@ -28,3 +28,28 @@ if (fond) {
   document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + fond + ".png')";
   document.getElementById("global").src = "Images/" + fond + "/global.png";
 }
+
+function findPlateau(grille) {
+  let plateau;
+  switch (grille) {
+    case "4 X 3":
+      plateau = "plateau12";
+      break;
+    case "4 X 4":
+      plateau = "plateau16";
+      break;
+    case "5 X 4":
+      plateau = "plateau20";
+      break;
+    case "6 X 5":
+      plateau = "plateau30";
+      break;
+    case "6 X 6":
+      plateau = "plateau36";
+      break;
+    case "8 X 5":
+      plateau = "plateau40";
+      break;
+  }
+  return plateau;
+}

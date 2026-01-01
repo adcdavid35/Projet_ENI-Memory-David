@@ -150,6 +150,23 @@ fieldset {
   box-shadow: 0 10px 30px #9d7c3f;
 }
 
+.ScorePlayer {
+  max-width: 350px;
+  min-width: 300px;
+  min-height: auto;
+  margin: 0;
+  padding: 3px;
+  border-radius: 10px;
+  border: 1px solid rgb(184, 130, 31);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 10px 30px #9d7c3f;
+}
+
+.binome {
+  display: flex;
+  gap: 50px;
+}
+
 .formIns,
 .formCon,
 .profCon {
@@ -490,11 +507,12 @@ a:focus {
   gap: 1px;
   width: auto;
   height: auto;
-
+  border-radius: 2px;
   margin: 0;
   padding: 1px;
 }
 .cellTD {
+  border-radius: 2px;
   margin: 0;
   padding: 0;
   width: auto;
@@ -507,9 +525,10 @@ th {
   font-size: 85%;
   font-weight: bold;
 }
+
 @media (orientation: portrait) {
   body {
-    overflow: hidden;
+    overflow: hidden !important;
   }
 
   .landscape-only {
@@ -521,7 +540,7 @@ th {
     inset: 0;
     background: #000;
     color: #fff;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -533,5 +552,20 @@ th {
 @media (orientation: landscape) {
   .rotate-message {
     display: none;
+  }
+
+  .binome {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 901px) {
+  .binome {
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 900px) {
+  .binome {
+    flex-direction: column;
+    align-items: center;
   }
 }

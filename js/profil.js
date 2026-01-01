@@ -80,9 +80,8 @@ function Profil() {
   document.getElementById("nom").value = user.nom;
   document.getElementById("mail").value = email;
 }
-Profil();
-// modification des images en fonction du choix dans le select
 
+// modification des images en fonction du choix dans le select
 document.getElementById("choix").addEventListener("change", () => {
   document.getElementById("global").src = "Images/" + document.getElementById("choix").value + "/global.png";
   document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + document.getElementById("choix").value + ".png')";
@@ -116,3 +115,66 @@ function saveConfig() {
   configJeu.grille = select2.selectedOptions[0].textContent;
   localStorage.setItem("config", JSON.stringify(configJeu));
 }
+
+function showScorePlayer() {
+  let users = JSON.parse(localStorage.getItem("users")) || {};
+  let currentUsers = JSON.parse(localStorage.getItem("currentUsers"));
+  let email = currentUsers.email;
+  // génère le plateau de jeu en fonction des préférences
+  // récupère <table> et <tbody>
+  const tblBody = document.getElementById("bestPlayer");
+
+  // création de toutes les cellules
+  if (users[email].score.length != 0) {
+    for (let i = 0; i < users[email].score.length; i++) {
+      // crée une ligne de tableau
+      const ligne3 = document.createElement("tr");
+      ligne3.className = "cell";
+      // Crée un élément <td>
+      let cellScore = document.createElement("td");
+      cellScore.className = "cellTD";
+      cellScore.textContent = users[email].score[i].score;
+      ligne3.appendChild(cellScore);
+
+      let cellGrille = document.createElement("td");
+      cellGrille.className = "cellTD";
+      cellGrille.textContent = users[email].score[i].plateau;
+      ligne3.appendChild(cellGrille);
+
+      let cellGame = document.createElement("td");
+      cellGame.className = "cellTD";
+      cellGame.textContent = users[email].score[i].jeu;
+      ligne3.appendChild(cellGame);
+
+      let cellDate = document.createElement("td");
+      cellDate.className = "cellTD";
+      cellDate.textContent = users[email].score[i].date;
+      ligne3.appendChild(cellDate);
+      // ajoute la ligne à la fin du corps du tableau
+      tblBody.appendChild(ligne3);
+    }
+  }
+}
+
+function majScorePlayer() {
+  let users = JSON.parse(localStorage.getItem("users")) || {};
+  let currentUsers = JSON.parse(localStorage.getItem("currentUsers"));
+  let email = currentUsers.email;
+
+  users[email].score.sort((a, b) => {
+    // tri par plateau
+    if (a.plateau !== b.plateau) {
+      return a.plateau.localeCompare(b.plateau);
+    }
+
+    // si même plateau : tri par score
+    return a.score - b.score;
+  });
+
+  //scores[plat] = users[email].score.slice(0, 5);
+  localStorage.setItem("users", JSON.stringify(users));
+}
+
+Profil();
+majScorePlayer();
+showScorePlayer();
