@@ -22,7 +22,15 @@ document.getElementById("formIns")?.addEventListener("submit", async function (e
   users[email] = {
     nom: nom,
     password: password,
-    score: [],
+    score: {
+      plateau12: [],
+      plateau16: [],
+      plateau20: [],
+      plateau30: [],
+      plateau36: [],
+      plateau40: [],
+    },
+
     preference: {},
   };
 

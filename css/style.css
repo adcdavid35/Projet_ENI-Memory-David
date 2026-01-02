@@ -6,6 +6,7 @@
   background-position: center;
   width: 100%;
   height: 100%;
+
   flex-direction: column;
   align-items: center;
   margin: 0;
@@ -15,8 +16,10 @@ main {
   display: flex;
   width: 100%;
   height: auto;
+  min-height: 82vh;
   flex-direction: column;
   align-items: center;
+  flex: 1;
 }
 
 header {
@@ -62,6 +65,10 @@ h3 {
   font-size: x-large;
   font-size: clamp(1.4rem, 0.3vw + 1rem, 2rem);
   margin: 5px 0;
+}
+h4 {
+  margin: 5px 0;
+  font-size: clamp(0.8rem, 0.5vw + 0.6rem, 1rem);
 }
 
 .menu {
@@ -524,6 +531,78 @@ th {
   text-decoration: underline;
   font-size: 85%;
   font-weight: bold;
+}
+.sepTab {
+  margin: 3px 0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-self: center;
+  height: 75px;
+  font-size: clamp(0.8rem, 0.3vw + 0.8rem, 1.2rem);
+}
+
+footer span,
+footer span p {
+  margin: 2px;
+  font-size: clamp(0.7rem, 0.35vw + 0.5rem, 1.2rem);
+}
+footer ul {
+  padding-inline-start: 10px;
+}
+hr {
+  margin: 0 0 8px 0;
+  border-style: none;
+}
+ul ul {
+  padding-inline-start: 10px;
+}
+.projet {
+  border: 1px solid black;
+  width: 95%;
+  height: auto;
+  display: block;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.titreBox {
+  margin: 0;
+  padding: 2px;
+}
+.contenuBox {
+  margin: 0;
+  padding: 2px;
+}
+
+.underline {
+  text-decoration: underline;
+  background: none;
+  color: inherit;
+  border: none;
+
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+dialog {
+  border: none;
+  padding: 10px;
+  border-radius: 1rem;
+  max-width: 380px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.35);
+}
+dialog button {
+  display: flex;
+  justify-self: center;
 }
 
 @media (orientation: portrait) {

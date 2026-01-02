@@ -112,15 +112,9 @@ function init() {
     if (victoire) {
       alert("VICTOIRE ! Appuyez sur la touche ESPACE pour recommencer la partie");
 
-      let users = JSON.parse(localStorage.getItem("users")) || {};
-      let currentUsers = JSON.parse(localStorage.getItem("currentUsers"));
-      let email = currentUsers.email;
-
-      users[email].score.push({ score: compteur, plateau: grille, jeu: memory, date: new Date().toLocaleDateString("fr-FR") });
-
       majScore(users[email].nom, compteur, memory);
 
-      localStorage.setItem("users", JSON.stringify(users));
+      //localStorage.setItem("users", JSON.stringify(users));
       localStorage.setItem("currentUsers", JSON.stringify({ email }));
     }
   }
@@ -174,6 +168,28 @@ function init() {
 }
 
 function majScore(nom, compteur, memory) {
+  //partie pour page profil
+  let users = JSON.parse(localStorage.getItem("users")) || {};
+  let currentUsers = JSON.parse(localStorage.getItem("currentUsers"));
+  let email = currentUsers.email;
+  if (!users[email].score[plat]) {
+    users[email].score[plat] = [];
+  }
+
+  users[email].score[plat].push({
+    score: compteur,
+    plateau: grille,
+    jeu: memory,
+    date: new Date().toLocaleDateString("fr-FR"),
+  });
+
+  users[email].score[plat].sort((a, b) => a.score - b.score);
+
+  users[email].score[plat] = users[email].score[plat].slice(0, 5);
+
+  localStorage.setItem("users", JSON.stringify(users));
+
+  //partie pour page jouer
   let scores = JSON.parse(localStorage.getItem("scores"));
 
   scores[plat].push({ player: nom, score: compteur, jeu: memory, date: new Date().toLocaleDateString("fr-FR") });

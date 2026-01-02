@@ -51,7 +51,7 @@
           Si vous voulez vous souvenir de votre score : <br />inscrivez vous via le
           <a href="inscription.html"> <em class="fofo">formulaire</em> </a>
           dédié.<br />
-          Le jeu garde les <strong>5 meilleurs</strong> scores en mémoire.
+          Le jeu garde vos <strong>5 meilleurs</strong> scores par grille en mémoire.
         </div>
       </div>
       <div class="rotate-message">
@@ -61,7 +61,268 @@
       </div>
       <div class="landscape-only"></div>
     </main>
-    <footer></footer>
+    <footer class="footer">
+      <div>
+        <span>2025, 2026 &#169; ENI - Memory. </span>
+        <span>Auteur : David THEBAULT </span>
+        <span>
+          <button onclick="modal2.showModal()" class="underline">Proposition de projet Front-End</button>
+          <dialog id="modal2">
+            <h2>Énoncé de l'exercice :</h2>
+            <h3>Projet : HTML - CSS - JS</h3>
+            <h3>Jeu du Memory</h3>
+            <hr />
+            <h4>1. Objectifs:</h4>
+            <ul>
+              <li>
+                Mise en application de la technologie web enseignée :
+                <ul>
+                  <li>Dans le cadre du cursus DW2M, ce projet arrive après les modules HTML, CSS et JavaScript, c'est à dire un mois de formation.</li>
+                </ul>
+              </li>
+              <li>Réaliser un premier projet. Durée donnée : 35h.</li>
+              <li>Mettre en oeuvre les connaissances en HTML, CSS et JavaScript basique avec manipulation du DOM et vérification de formulaire.</li>
+              <li>
+                Commencer aussi à apprendre GIT de façon basique.
+                <ul>
+                  <li>Créer un compte sur Gitlab ou Github pour pouvoir ensuite partager le projet à un possible recruteur (à définir avec le formateur).</li>
+                  <li>
+                    Ici l’utilisation de GIT est basique. Juste travailler sur une branche et sauvegarder le travail, pour avoir un historique et savoir les
+                    commandes basiques : git add commit push, pull, ainsi que de savoir-faire un fichier .gitignore.
+                  </li>
+                </ul>
+              </li>
+              <li>Chiffrer les tâches et commencer à gérer un projet.</li>
+              <li>&#192; la fin du projet, restituer au formateur le zip . Remplir le document d’auto-évaluation.</li>
+            </ul>
+
+            <h4>2. Élements fournis:</h4>
+
+            <ul>
+              <li>Document de vision : présente le projet, ses objectifs, ainsi qu’une vision globale des fonctionnalités attendues (Voir ci dessous).</li>
+              <li>
+                Description produit : présente les fonctionnalités attendues par le client et priorisées par lui. Les fonctionnalités sont rangées par
+                itération. Une itération est une période de travail aboutissant à un logiciel potentiellement livrable.
+              </li>
+              <li>Ressources : Archive contenant les médias pour la réalisation du projet.</li>
+            </ul>
+            <h4>3. Ce qui est attendu:</h4>
+            <ul>
+              <li>Réalisez les fonctionnalités décrites dans l’itération 1.</li>
+              <li>
+                Selon votre niveau, vous pourrez dépasser l’itération n°1, et réaliser les itérations suivantes à la condition de pouvoir présenter un logiciel
+                fonctionnel en fin de chaque itération.
+              </li>
+            </ul>
+            <h3>Extrait du document de vision</h3>
+
+            <p style="text-indent: 25px">
+              <em>
+                "Ce document présente les objectifs du projet ENI MEMORY, son périmètre, ainsi que les fonctions de l’application à réaliser. <br />Les choix
+                formalisés dans ce document font suite à une analyse fonctionnelle réalisée par l’AMOA (Assistance à Maîtrise d’Ouvrage) faite en collaboration
+                avec le client. Toutes les exigences décrites ont été validées par le client. Tout membre de l’équipe projet désirant apporter des améliorations
+                à ce document devra les proposer à son responsable."
+              </em>
+            </p>
+            <h4>1. Présentation du projet:</h4>
+            <p style="text-indent: 25px">
+              La société ENI souhaite développer pour ses stagiaires une plateforme web leur permettant de jouer à un jeu de memory, de pouvoir sélectionner le
+              type de plateau, la dimension et de s’inscrire puis visualiser leur score et les meilleurs scores.
+            </p>
+            <h4>2. Positionnement:</h4>
+            <table>
+              <tbody>
+                <tr>
+                  <td class="projet">
+                    <section class="titreBox">Nos Forces</section>
+                    <br />
+                    <section class="contenuBox">La présence d’un grand nombre d’apprenants répartis sur différents sites en France.</section>
+                  </td>
+                  <td class="projet">
+                    <section class="titreBox">Les opportunités</section>
+                    <br />
+                    <section class="contenuBox">
+                      L’accessibilité au web aisée en raison de l’accès aux ordinateurs de bureau et l’utilisation courante des smartphones, tablettes doit
+                      permettre de faire vivre la plateforme. <br />
+                      La spécialisation informatique de l’ENI doit permettre la réalisation de la plateforme.
+                    </section>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="projet">
+                    <section class="titreBox">Nos ambitions</section>
+                    <br />
+                    <section class="contenuBox">
+                      Développer une application responsive et soignée permettant aux apprenants de jouer à des parties de memory, de choisir leur plateau, de
+                      s’inscrire et de visualiser leurs meilleurs scores.
+                    </section>
+                  </td>
+                  <td class="projet">
+                    <section class="titreBox">Les résultats attendus</section>
+                    <br />
+                    <section class="contenuBox">Permettre de s’amuser et de sauvegarder son meilleur score.</section>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <h4>2.1 Description du problème:</h4>
+            <p style="text-indent: 25px">
+              Mettre en place un jeu de Memory permettant la sélection de différents plateaux comme par exemple la possibilité de jouer avec les lettres du
+              scrabble ou de jouer avec des animaux, des légumes et par la suite de pouvoir rajouter facilement son environnement de jeu.
+            </p>
+            <ul>
+              <li>Sauvegarder dans le localStorage du navigateur les différents scores et garder les 10 meilleurs affichés.</li>
+              <li>Sauvegarder l’inscription de l’utilisateur avec une sauvegarde du score et de ses dernières parties dans le localStorage.</li>
+              <li>
+                Mettre en place un formulaire pour l’inscription de l’utilisateur et ensuite pouvoir sauvegarder ses préférences en matière de memory et ses
+                derniers scores.
+              </li>
+            </ul>
+            <p style="text-indent: 25px"><em>... etc. On nous fourni des captures d'écrans des différentes pages et fonctionnalités attendues</em></p>
+
+            <button onclick="modal2.close()">Fermer</button>
+          </dialog>
+        </span>
+
+        <span>
+          <button onclick="modal3.showModal()" class="underline">Clause de non-responsabilité</button>
+          <dialog id="modal3">
+            <h2>
+              Clause de non-responsabilité,<br />
+              sécurité et protection des données (RGPD)
+            </h2>
+            <p style="text-indent: 25px">
+              Le jeu de Memory proposé sur ce site est avant tout à titre ludique et éducatif. Il sert aussi à montrer que l’auteur a rendu un projet viable
+              (malgré la possibilité de l'améliorer encore et encore), et à illustrer à des recruteurs potentiels la logique de programmation et les compétences
+              acquises en Front-End.
+            </p>
+
+            <h3>Protection des données personnelles (RGPD)</h3>
+            <p style="text-indent: 25px">
+              Conformément au Règlement Général sur la Protection des Données (RGPD – UE 2016/679), aucune donnée personnelle permettant d’identifier
+              directement l’utilisateur n’est collectée, stockée ou transmise à des tiers. Les données éventuellement utilisées par le jeu (telles que score,
+              progression ou préférences) sont stockées exclusivement dans le navigateur de l’utilisateur via le mécanisme localStorage. Ces données :
+            </p>
+            <ul>
+              <li>ne sont jamais envoyées à un serveur,</li>
+              <li>restent sur l’appareil de l’utilisateur,</li>
+              <li>peuvent être supprimées à tout moment par l’utilisateur via les paramètres de son navigateur.</li>
+              <li>L’éditeur du jeu n’a aucun accès à ces données locales.</li>
+            </ul>
+
+            <h3>Sécurité et responsabilité</h3>
+            <p style="text-indent: 25px">
+              Bien que des mesures raisonnables soient mises en œuvre pour assurer le bon fonctionnement du jeu, l’éditeur ne peut garantir une sécurité absolue
+              du site ou de l’application.
+            </p>
+            <p style="text-indent: 25px">
+              En cas de piratage, d’intrusion malveillante, de faille de sécurité ou d’altération des données, l’éditeur ne saurait être tenu responsable de
+              toute perte, modification ou utilisation frauduleuse des informations stockées localement sur l’appareil de l’utilisateur.
+            </p>
+
+            <h3>Utilisation des mots de passe</h3>
+            <p style="text-indent: 25px">
+              Si le jeu permet la saisie d’un mot de passe ou d’un identifiant (à des fins de jeu uniquement), l’utilisateur s’engage à ne pas utiliser un mot
+              de passe réel ou habituellement utilisé sur d’autres sites ou services.
+            </p>
+            <p style="text-indent: 25px">
+              Il est fortement recommandé d’utiliser un mot de passe fictif ou dédié, sans lien avec des comptes personnels, professionnels ou bancaires.
+            </p>
+            <p style="text-indent: 25px">
+              L’éditeur décline toute responsabilité en cas de réutilisation d’un mot de passe personnel par l’utilisateur et des conséquences qui pourraient en
+              découler.
+            </p>
+
+            <h3>Acceptation</h3>
+            <p style="text-indent: 25px">
+              En accédant et en utilisant ce jeu, l’utilisateur reconnaît avoir pris connaissance des présentes clauses et les accepter sans réserve.
+            </p>
+            <button onclick="modal3.close()">Fermer</button>
+          </dialog>
+        </span>
+
+        <span>
+          <button onclick="modal.showModal()" class="underline">Mentions légales</button>
+          <dialog id="modal">
+            <h2>Mentions légales</h2>
+
+            <h3>1. Édition du site</h3>
+            <p style="text-indent: 25px">
+              En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site
+              internet "https://github.com/adcdavid35/Projet_ENI-Memory-David" l'identité des différents intervenants dans le cadre de sa réalisation et de son
+              suivi:
+            </p>
+            <ul>
+              <li>Propriétaire du site : THEBAULT David</li>
+              <li>Contact : www.linkedin.com/in/david-thebault</li>
+
+              <li>Adresse : Rennes</li>
+              <li>Directeur de la publication : THEBAULT David</li>
+              <li>Hébergeur : Github https://github.com/</li>
+            </ul>
+            <h3>2. Propriété intellectuelle et contrefaçons.</h3>
+            <p style="text-indent: 25px">
+              THEBAULT David est propriétaire des droits de propriété intellectuelle et détient les droits d’usage sur tous les éléments accessibles sur le site
+              internet, notamment les textes, images, graphismes, logos, vidéos, architecture, icônes et sons.
+            </p>
+            <p style="text-indent: 25px">
+              Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le
+              procédé utilisé, est interdite, sauf autorisation écrite préalable de THEBAULT David.
+            </p>
+            <p style="text-indent: 25px">
+              Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient sera considérée comme constitutive d’une contrefaçon et
+              poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.
+            </p>
+            <h3>3. Limitations de responsabilité.</h3>
+            <p style="text-indent: 25px">
+              THEBAULT David ne pourra être tenu pour responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site
+              https://github.com/adcdavid35/Projet_ENI-Memory-David.
+            </p>
+            <p style="text-indent: 25px">
+              THEBAULT David décline toute responsabilité quant à l’utilisation qui pourrait être faite des informations et contenus présents sur
+              https://github.com/adcdavid35/Projet_ENI-Memory-David.
+            </p>
+            <p style="text-indent: 25px">
+              THEBAULT David s’engage à sécuriser au mieux le site https://github.com/adcdavid35/Projet_ENI-Memory-David, cependant sa responsabilité ne pourra
+              être mise en cause si des données indésirables sont importées et installées sur son site à son insu.
+            </p>
+            <p style="text-indent: 25px">
+              Des espaces interactifs (espace contact ou commentaires) sont à la disposition des utilisateurs. THEBAULT David se réserve le droit de supprimer,
+              sans mise en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable en France, en particulier aux
+              dispositions relatives à la protection des données.
+            </p>
+            <p style="text-indent: 25px">
+              Le cas échéant, THEBAULT David se réserve également la possibilité de mettre en cause la responsabilité civile et/ou pénale de l’utilisateur,
+              notamment en cas de message à caractère raciste, injurieux, diffamant, ou pornographique, quel que soit le support utilisé (texte, photographie
+              …).
+            </p>
+            <h3>4. CNIL et gestion des données personnelles.</h3>
+            <p style="text-indent: 25px">Se référer aux clauses de non responsabilité.</p>
+            <p style="text-indent: 25px">Aucune donnée n'est collectée et les seules infos stockées le sont sur le matériel de l'utilisateur.</p>
+            <h3>5. Liens hypertextes et cookies</h3>
+            <p style="text-indent: 25px">
+              Le site https://github.com/adcdavid35/Projet_ENI-Memory-David contient des liens hypertextes uniquement vers GITHUB, hébergeur du site, dégage
+              toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers
+              https://github.com/adcdavid35/Projet_ENI-Memory-David.
+            </p>
+            <p style="text-indent: 25px">
+              La navigation sur le site https://github.com/adcdavid35/Projet_ENI-Memory-David est susceptible de provoquer l’installation de cookie(s) sur
+              l’ordinateur de l’utilisateur. Un "cookie" est un fichier de petite taille qui enregistre des informations relatives à la navigation d’un
+              utilisateur sur un site.
+            </p>
+            <p style="text-indent: 25px">Aucun cookies n'est installé nativement lors de l'utilisation du jeu.</p>
+
+            <h3>6. Droit applicable et attribution de juridiction.</h3>
+            <p>
+              Tout litige en relation avec l’utilisation du site https://github.com/adcdavid35/Projet_ENI-Memory-David est soumis au droit français. En dehors
+              des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de Rennes.
+            </p>
+
+            <button onclick="modal.close()">Fermer</button>
+          </dialog>
+        </span>
+      </div>
+    </footer>
 
     <script src="./js/index.js"></script>
     <script src="./js/memory.js"></script>

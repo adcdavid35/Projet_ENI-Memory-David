@@ -1,3 +1,4 @@
+//let plat = findPlateau(grille);
 //select choix de jeu
 const select = document.getElementById("choix");
 const data = [
@@ -123,58 +124,66 @@ function showScorePlayer() {
   // génère le plateau de jeu en fonction des préférences
   // récupère <table> et <tbody>
   const tblBody = document.getElementById("bestPlayer");
+  tblBody.innerHTML = "";
 
-  // création de toutes les cellules
-  if (users[email].score.length != 0) {
-    for (let i = 0; i < users[email].score.length; i++) {
-      // crée une ligne de tableau
-      const ligne3 = document.createElement("tr");
-      ligne3.className = "cell";
-      // Crée un élément <td>
-      let cellScore = document.createElement("td");
-      cellScore.className = "cellTD";
-      cellScore.textContent = users[email].score[i].score;
-      ligne3.appendChild(cellScore);
+  Object.keys(users[email].score).forEach((plat) => {
+    // création de toutes les cellules
+    if (users[email].score[plat].length != 0) {
+      const sepTab = document.createElement("tr");
+      sepTab.className = "sepTab";
 
-      let cellGrille = document.createElement("td");
-      cellGrille.className = "cellTD";
-      cellGrille.textContent = users[email].score[i].plateau;
-      ligne3.appendChild(cellGrille);
+      for (let i = 0; i < users[email].score[plat].length; i++) {
+        // crée une ligne de tableau
 
-      let cellGame = document.createElement("td");
-      cellGame.className = "cellTD";
-      cellGame.textContent = users[email].score[i].jeu;
-      ligne3.appendChild(cellGame);
+        const ligne3 = document.createElement("tr");
+        ligne3.className = "cell";
+        // Crée un élément <td>
+        let cellScore = document.createElement("td");
+        cellScore.className = "cellTD";
+        cellScore.textContent = users[email].score[plat][i].score;
+        ligne3.appendChild(cellScore);
 
-      let cellDate = document.createElement("td");
-      cellDate.className = "cellTD";
-      cellDate.textContent = users[email].score[i].date;
-      ligne3.appendChild(cellDate);
-      // ajoute la ligne à la fin du corps du tableau
-      tblBody.appendChild(ligne3);
+        let cellGrille = document.createElement("td");
+        cellGrille.className = "cellTD";
+        cellGrille.textContent = users[email].score[plat][i].plateau;
+        ligne3.appendChild(cellGrille);
+
+        let cellGame = document.createElement("td");
+        cellGame.className = "cellTD";
+        cellGame.textContent = users[email].score[plat][i].jeu;
+        ligne3.appendChild(cellGame);
+
+        let cellDate = document.createElement("td");
+        cellDate.className = "cellTD";
+        cellDate.textContent = users[email].score[plat][i].date;
+        ligne3.appendChild(cellDate);
+        // ajoute la ligne à la fin du corps du tableau
+        tblBody.appendChild(ligne3);
+      }
+      tblBody.appendChild(sepTab);
     }
-  }
-}
-
-function majScorePlayer() {
-  let users = JSON.parse(localStorage.getItem("users")) || {};
-  let currentUsers = JSON.parse(localStorage.getItem("currentUsers"));
-  let email = currentUsers.email;
-
-  users[email].score.sort((a, b) => {
-    // tri par plateau
-    if (a.plateau !== b.plateau) {
-      return a.plateau.localeCompare(b.plateau);
-    }
-
-    // si même plateau : tri par score
-    return a.score - b.score;
   });
-
-  //scores[plat] = users[email].score.slice(0, 5);
-  localStorage.setItem("users", JSON.stringify(users));
 }
+
+// function majScorePlayer() {
+//   let users = JSON.parse(localStorage.getItem("users")) || {};
+//   let currentUsers = JSON.parse(localStorage.getItem("currentUsers"));
+//   let email = currentUsers.email;
+
+//   users[email].score.sort((a, b) => {
+//     // tri par plateau
+//     if (a.plateau !== b.plateau) {
+//       return a.plateau.localeCompare(b.plateau);
+//     }
+
+//     // si même plateau : tri par score
+//     return a.score - b.score;
+//   });
+
+//   //scores[plat] = users[email].score.slice(0, 5);
+//   localStorage.setItem("users", JSON.stringify(users));
+// }
 
 Profil();
-majScorePlayer();
+// majScorePlayer();
 showScorePlayer();
