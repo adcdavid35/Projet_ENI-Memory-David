@@ -19,6 +19,7 @@ document.getElementById("deconnect").addEventListener("click", function (e) {
   window.location.href = "connexion.html";
 });
 
+//changement des images de fond et de présentaion du jeu(index et profil)
 let configJeu = JSON.parse(localStorage.getItem("config")) || {};
 let fond = configJeu.fond;
 let label = configJeu.label;

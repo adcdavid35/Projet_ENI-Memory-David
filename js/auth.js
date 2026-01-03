@@ -1,5 +1,4 @@
 // Partie authentification sur inscription.HTML
-
 document.getElementById("formIns")?.addEventListener("submit", async function (e) {
   e.preventDefault();
 
@@ -7,9 +6,18 @@ document.getElementById("formIns")?.addEventListener("submit", async function (e
   let email = document.getElementById("mail").value;
   let password = document.getElementById("MDP").value;
   let users = JSON.parse(localStorage.getItem("users")) || {};
+  let scores = JSON.parse(localStorage.getItem("scores")) || {};
 
   const pseudoExiste = Object.values(users).some((user) => user.nom === nom);
   if (pseudoExiste) {
+    alert("Pseudo déjà utilisé");
+    return;
+  }
+
+  const pseudoExiste2 = Object.values(scores)
+    .flat()
+    .some((score) => score.player === nom);
+  if (pseudoExiste2) {
     alert("Pseudo déjà utilisé");
     return;
   }

@@ -1,4 +1,5 @@
 init();
+// Jeu de couleurs sous input
 function init() {
   document.getElementById("nom").addEventListener("input", (e) => {
     if (e.target.value.length < 3) {
@@ -78,16 +79,33 @@ function init() {
     if (val === "" || val2 === "") return;
     if (val === val2) {
       document.getElementById("valide4").src = "./Images/check.svg";
-      document.getElementById("egal").innerHTML = "Il est identique.";
+      document.getElementById("egal").textContent = "Il est identique.";
       document.getElementById("egal").style.color = "green";
     } else {
       document.getElementById("valide4").src = "./Images/error.svg";
-      document.getElementById("egal").innerHTML = "Il n'est pas identique.";
+      document.getElementById("egal").textContent = "Il n'est pas identique.";
       document.getElementById("egal").style.color = "red";
     }
   }
 }
 
 document.getElementById("reset").addEventListener("click", () => {
+  document.getElementById("pseudo").style.color = "black";
+  document.getElementById("mail1").style.color = "black";
+  document.getElementById("regex").style.color = "black";
+  document.getElementById("egal").style.color = "black";
+
+  document.getElementById("valide1").src = "./Images/error.svg";
+  document.getElementById("valide2").src = "./Images/error.svg";
+  document.getElementById("valide3").src = "./Images/error.svg";
+  document.getElementById("valide4").src = "./Images/error.svg";
+
+  document.getElementById("fai").style.visibility = "hidden";
+  document.getElementById("faible").style.visibility = "hidden";
+  document.getElementById("moy").style.visibility = "hidden";
+  document.getElementById("moyen").style.visibility = "hidden";
+  document.getElementById("for").style.visibility = "hidden";
+  document.getElementById("fort").style.visibility = "hidden";
+
   document.getElementById("formIns").reset();
 });

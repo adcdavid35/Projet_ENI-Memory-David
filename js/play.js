@@ -26,16 +26,12 @@ if (fond) {
 
 // génère le plateau de jeu en fonction des préférences
 function generateTable() {
-  // récupère <table> et <tbody>
   const tblBody = document.getElementById("grille");
 
-  // création de toutes les cellules
   for (let i = 0; i < row; i++) {
-    // crée une ligne de tableau
     const ligne = document.createElement("tr");
 
     for (let j = 0; j < col; j++) {
-      // Crée un élément <td> et affecte l'image "?""
       let cell = document.createElement("td");
       cell.className = "image";
       let img = myImage.cloneNode(true);
@@ -43,7 +39,6 @@ function generateTable() {
       ligne.appendChild(cell);
     }
 
-    // ajoute la ligne à la fin du corps du tableau
     tblBody.appendChild(ligne);
   }
 }
@@ -75,9 +70,23 @@ function init() {
     element.addEventListener("click", returnCard);
   });
 
+  // pour borner le début de numérotation des cartes entre 1 et 20.
+  function getRandomInt(max) {
+    min = 1;
+    max = Math.floor(max);
+    let nombre = Math.floor(Math.random() * (max - min + 1)) + min - nbreCarteDiff;
+    if (nombre < 1) return 1;
+    return nombre;
+  }
+
   // Je fais un tableau de paires, je le mélange
   let nbreCarteDiff = users?.[email]?.preference?.taille / 2;
-  for (let i = 1; i <= nbreCarteDiff; i++) {
+
+  let start = getRandomInt(20);
+  console.log(start);
+  console.log(start + nbreCarteDiff - 1);
+
+  for (let i = start; i <= start + nbreCarteDiff - 1; i++) {
     valeurImages.push(i, i);
   }
 
@@ -136,7 +145,7 @@ function init() {
 
     if (coups.length === 2) {
       compteur++;
-      compteurFinal.innerHTML = compteur;
+      compteurFinal.textContent = compteur;
 
       if (coups[0] === coups[1]) {
         setTimeout(() => {
@@ -168,7 +177,7 @@ function init() {
 }
 
 function majScore(nom, compteur, memory) {
-  //partie pour page profil
+  //partie pour page :profil
   let users = JSON.parse(localStorage.getItem("users")) || {};
   let currentUsers = JSON.parse(localStorage.getItem("currentUsers"));
   let email = currentUsers.email;
@@ -189,7 +198,7 @@ function majScore(nom, compteur, memory) {
 
   localStorage.setItem("users", JSON.stringify(users));
 
-  //partie pour page jouer
+  //partie pour page :jouer
   let scores = JSON.parse(localStorage.getItem("scores"));
 
   scores[plat].push({ player: nom, score: compteur, jeu: memory, date: new Date().toLocaleDateString("fr-FR") });
@@ -203,18 +212,14 @@ function majScore(nom, compteur, memory) {
 function showScore() {
   let scores = JSON.parse(localStorage.getItem("scores"));
 
-  // génère le plateau de jeu en fonction des préférences
-  // récupère <tbody>
+  // génère le tableau de score en fonction de la grandeur de la grille
   const tblBody = document.getElementById("best");
-
-  // création de toutes les cellules
 
   if (scores[plat].length != 0) {
     for (let i = 0; i < scores[plat].length; i++) {
-      // crée une ligne de tableau
       const ligne2 = document.createElement("tr");
       ligne2.className = "cell";
-      // Crée un élément <td>
+
       let cellPlayer = document.createElement("td");
       cellPlayer.className = "cellTD";
       cellPlayer.textContent = scores[plat][i].player;
@@ -234,7 +239,7 @@ function showScore() {
       cellDate.className = "cellTD";
       cellDate.textContent = scores[plat][i].date;
       ligne2.appendChild(cellDate);
-      // ajoute la ligne à la fin du corps du tableau
+
       tblBody.appendChild(ligne2);
     }
   }
