@@ -13,16 +13,16 @@ if (!localStorage.getItem("scores")) {
   localStorage.setItem("scores", JSON.stringify(scores));
 }
 
+// affiche le titre du jeu
+if (fond) {
+  document.getElementById("caption").innerText = "Les " + label.toLowerCase() + " :";
+}
+
 let col = parseInt(grille.split(" X ")[0]);
 let row = parseInt(grille.split(" X ")[1]);
 let myImage = new Image();
 myImage.src = "./Images/question.svg";
 myImage.className = "size";
-
-// affiche le titre du jeu
-if (fond) {
-  document.getElementById("caption").innerText = "Les " + label.toLowerCase() + " :";
-}
 
 // génère le plateau de jeu en fonction des préférences
 function generateTable() {
@@ -83,8 +83,6 @@ function init() {
   let nbreCarteDiff = users?.[email]?.preference?.taille / 2;
 
   let start = getRandomInt(20);
-  console.log(start);
-  console.log(start + nbreCarteDiff - 1);
 
   for (let i = start; i <= start + nbreCarteDiff - 1; i++) {
     valeurImages.push(i, i);
@@ -123,7 +121,6 @@ function init() {
 
       majScore(users[email].nom, compteur, memory);
 
-      //localStorage.setItem("users", JSON.stringify(users));
       localStorage.setItem("currentUsers", JSON.stringify({ email }));
     }
   }
@@ -168,12 +165,6 @@ function init() {
       }
     }
   }
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === " ") {
-      window.location.reload();
-    }
-  });
 }
 
 function majScore(nom, compteur, memory) {
@@ -246,3 +237,36 @@ function showScore() {
 }
 
 showScore();
+//clavier
+document.addEventListener("keydown", (event) => {
+  if (event.key === " ") {
+    window.location.reload();
+  }
+});
+
+//Smartphone
+let tap = 0;
+
+document.addEventListener("pointerdown", (e) => {
+  if (e.pointerType === "touch") {
+    const now = Date.now();
+    if (now - tap < 300) {
+      window.location.reload();
+    }
+    tap = now;
+  }
+});
+
+function relanceJeu() {
+  if (
+    window.matchMedia("(orientation: landscape)") &&
+    window.matchMedia("screen and (max-width: 970px)").matches &&
+    window.matchMedia("(pointer: coarse)").matches
+  ) {
+    document.getElementById("smartphone").textContent = "Double cliquez pour pour relancer le jeu.";
+  } else {
+    document.getElementById("smartphone").textContent = "Appuyez sur la barre d'espace pour relancer le jeu.";
+  }
+}
+
+window.addEventListener("resize", relanceJeu);

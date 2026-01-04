@@ -27,7 +27,9 @@ let grille = configJeu.grille;
 
 if (fond) {
   document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + fond + ".png')";
-  document.getElementById("global").src = "Images/" + fond + "/global.png";
+  if (document.getElementById("global")) {
+    document.getElementById("global").src = "Images/" + fond + "/global.png";
+  }
 }
 
 function findPlateau(grille) {
