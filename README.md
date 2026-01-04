@@ -158,6 +158,8 @@ Bien que l’IA puisse coder ce jeu en moins de 10 minutes, il nous a été inte
 
         La fonction findPlateau () permet de connaitre le plateau en cours d'utilisation.
 
+        J'ai également un changement de couleur de texte en fonction du thème choisi.
+
                              ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 5.  Multimédia.
