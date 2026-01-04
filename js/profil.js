@@ -82,9 +82,108 @@ function Profil() {
 }
 
 // modification des images en fonction du choix dans le select
+let users = JSON.parse(localStorage.getItem("users"));
+let currentUsers = JSON.parse(localStorage.getItem("currentUsers"));
+
+const email = currentUsers.email;
+const user = users[email];
+
+let nom = user.nom;
+let mail = user;
+
 document.getElementById("choix").addEventListener("change", () => {
   document.getElementById("global").src = "Images/" + document.getElementById("choix").value + "/global.png";
   document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + document.getElementById("choix").value + ".png')";
+
+  if (document.getElementById("choix").value == "Chiens") {
+    document.querySelectorAll(".Accueil, .Inscription, .Connexion, .Profil, .Jouer").forEach((el) => {
+      el.style = "mix-blend-mode: screen";
+    });
+
+    document.querySelectorAll("h1, .Accueil, .Inscription, .Connexion, .Profil, .Jouer").forEach((el) => {
+      el.style.color = "#b6e8f5ff";
+    });
+
+    document.querySelectorAll(".box, .formIns,.formCon ,.xxx  ").forEach((el) => {
+      el.style.color = "#7bc4d7";
+    });
+
+    document.querySelectorAll(".foot,.fofo, .confirmPW, .footer span").forEach((el) => {
+      el.style.color = "#00222b";
+    });
+
+    document.querySelectorAll(".mandatory").forEach((el) => {
+      el.style.color = "#182a2eff";
+    });
+    if (nom) {
+      document.getElementById("nom").style.color = "#68797d";
+    }
+    if (mail) {
+      document.getElementById("mail").style.color = "#68797d";
+    }
+  }
+
+  if (document.getElementById("choix").value == "Dino") {
+    document.querySelectorAll(".Accueil, .Inscription, .Connexion, .Profil, .Jouer").forEach((el) => {
+      el.style = "mix-blend-mode: screen";
+    });
+
+    document.querySelectorAll("h1, .Accueil, .Inscription, .Connexion, .Profil, .Jouer").forEach((el) => {
+      el.style.color = "#c1f8d1ff";
+    });
+
+    document.querySelectorAll(".box, .formIns,.formCon ,.xxx  ").forEach((el) => {
+      el.style.color = "#063620ff";
+    });
+
+    document.querySelectorAll(".foot,.fofo, .confirmPW, .footer span").forEach((el) => {
+      el.style.color = "#021608ff";
+    });
+
+    document.querySelectorAll(".mandatory").forEach((el) => {
+      el.style.color = "#063620ff";
+    });
+    if (nom) {
+      document.getElementById("nom").style.color = "#2d3335ff";
+    }
+    if (mail) {
+      document.getElementById("mail").style.color = "#2d3335ff";
+    }
+  }
+
+  if (document.getElementById("choix").value == "Ferme") {
+    document.querySelectorAll(".Accueil, .Inscription, .Connexion, .Profil, .Jouer").forEach((el) => {
+      el.style = "mix-blend-mode: screen";
+    });
+
+    document.querySelectorAll("h1, .Accueil, .Inscription, .Connexion, .Profil, .Jouer").forEach((el) => {
+      el.style.color = "#faecd2ff";
+    });
+
+    document.querySelectorAll(".box, .formIns,.formCon ,.confirmPW,.xxx  ").forEach((el) => {
+      el.style.color = "#1f1304ff";
+    });
+
+    document.querySelectorAll(".foot, .fofo").forEach((el) => {
+      el.style.color = "#F2EDE8";
+    });
+
+    document.querySelectorAll(".footer span").forEach((el) => {
+      el.style.color = "black";
+    });
+
+    document.querySelectorAll(".mandatory").forEach((el) => {
+      el.style.color = "wheat";
+    });
+    if (nom) {
+      document.getElementById("nom").style.color = "#2d3335ff";
+    }
+    if (mail) {
+      document.getElementById("mail").style.color = "#2d3335ff";
+    }
+
+    localStorage.setItem("users", JSON.stringify(users));
+  }
 });
 
 // bouton supprimer compte
