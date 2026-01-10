@@ -2,16 +2,19 @@
 
 Projet de Memory de David THEBAULT
 
-0.  Pour voir le rendu du projet :
-    Ouvrir le dossier avec VS Code et lancer "Go live" dans "Google Chrome".
+## Sommaire
+1. [Remerciements](#remerciements)
+2. [Contexte general](#contexte-general)
+3. [Iterations](#iterations)
+4. [Explication de mes choix et de ma logique de programmation](#explication-de-mes-choix-et-de-ma-logique-de-programmation)
+5. [Multimedia](#multimedia)
 
-1.  Remerciements.
+
+## Remerciements
     Je souhaite tout d’abord remercier les formateurs de l’ENI École Informatique pour la qualité de leur enseignement et la bienveillance de leurs conseils.
     Ce projet, premier de la formation, est entièrement orienté côté client.
 
-                                ----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-2.  Contexte général.
+## Contexte general
     Ce projet intervient au cours du premier mois de formation, juste après deux semaines dédiées au « Front » (HTML, CSS et JavaScript).
 
     Le temps prévu pour sa réalisation est de 35 heures. Cependant :
@@ -36,9 +39,7 @@ Bien que l’IA puisse coder ce jeu en moins de 10 minutes, il nous a été inte
 - Identifier des fonctions plus facilement que dans la documentation parfois trop dense, en privilégiant l’efficacité plutôt que de perdre du temps à chercher une solution correspondant à ma logique de programmation.
 - Simplifier la relecture du code en cas de bug ou d’erreur (par exemple, une balise fermante manquante suite à un copier-coller ou une suppression accidentelle).
 
-                             ----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-3.  Itérations.
+## Iterations
     3.1 La base:
 
     - Réalisation de la structure globale du site.(pages / formulaires).
@@ -60,9 +61,7 @@ Bien que l’IA puisse coder ce jeu en moins de 10 minutes, il nous a été inte
     - Avant de commencer une partie, choix du thème.
     - Cryptage du mot de passe.
 
-                             ----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-4.  Explication de mes choix et de ma logique de programmation.
+## Explication de mes choix et de ma logique de programmation
     Introduction:
     Le site est optimisé pour Google Chrome. Certaines fonctionnalités ne sont pas encore pleinement compatibles avec Firefox (version 146.0.1, 64 bits, à la date d’édition).
     J’ai fait de mon mieux pour assurer une compatibilité mobile et un affichage responsive.
@@ -160,9 +159,7 @@ Bien que l’IA puisse coder ce jeu en moins de 10 minutes, il nous a été inte
 
         J'ai également un changement de couleur de texte en fonction du thème choisi.
 
-                             ----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-5.  Multimédia.
+## Multimedia
     On retrouvera dans le dossier "Images" l'ensemble des images nécessaires au bon fonctionnement du jeu.
     J'ai choisi de transformer l'ensemble des images de fond, cartes de jeux et planches globale en PNG pour profiter de la transparence du fond et me faciliter la programmation.
     Chaque choix de jeu dans le Profil fait changer le fond, la planche globale et les cartes de jeux.
