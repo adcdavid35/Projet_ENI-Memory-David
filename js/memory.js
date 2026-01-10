@@ -30,9 +30,9 @@ let label = configJeu.label;
 let grille = configJeu.grille;
 
 if (fond) {
-  document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + fond + ".png')";
+  document.getElementById("body").style.backgroundImage = "url('../images/Fonddecran/" + fond + ".png')";
   if (document.getElementById("global")) {
-    document.getElementById("global").src = "Images/" + fond + "/global.png";
+    document.getElementById("global").src = "images/" + fond + "/global.png";
   }
 }
 

@@ -92,8 +92,8 @@ let nom = user.nom;
 let mail = user;
 
 document.getElementById("choix").addEventListener("change", () => {
-  document.getElementById("global").src = "Images/" + document.getElementById("choix").value + "/global.png";
-  document.getElementById("body").style.backgroundImage = "url('../Images/Fonddecran/" + document.getElementById("choix").value + ".png')";
+  document.getElementById("global").src = "images/" + document.getElementById("choix").value + "/global.png";
+  document.getElementById("body").style.backgroundImage = "url('../images/Fonddecran/" + document.getElementById("choix").value + ".png')";
 
   if (document.getElementById("choix").value == "Chiens") {
     document.querySelectorAll(".Accueil, .Inscription, .Connexion, .Profil, .Jouer").forEach((el) => {

@@ -21,7 +21,7 @@ if (fond) {
 let col = parseInt(grille.split(" X ")[0]);
 let row = parseInt(grille.split(" X ")[1]);
 let myImage = new Image();
-myImage.src = "./Images/question.svg";
+myImage.src = "./images/question.svg";
 myImage.className = "size";
 
 // génère le plateau de jeu en fonction des préférences
@@ -52,7 +52,7 @@ function init() {
   let compteurFinal = document.querySelector("compteur");
   let compteur = 0;
   let testvictoire = document.querySelectorAll(".image");
-  let facecachee = "./Images/question.svg";
+  let facecachee = "./images/question.svg";
   let cardSelect = document.querySelectorAll(".image");
 
   let current = JSON.parse(localStorage.getItem("currentUsers"));
@@ -135,7 +135,7 @@ function init() {
     let img = card.querySelector("img");
 
     // choix du jeu venant du profil
-    img.src = "./Images/" + memory + "/" + tableauImage.get(card) + ".png";
+    img.src = "./images/" + memory + "/" + tableauImage.get(card) + ".png";
 
     coups.push(tableauImage.get(card));
     cartesCliquees.push(card);

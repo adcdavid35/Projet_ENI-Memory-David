@@ -4,10 +4,10 @@ function init() {
   document.getElementById("nom").addEventListener("input", (e) => {
     if (e.target.value.length < 3) {
       document.getElementById("pseudo").style.color = "red";
-      document.getElementById("valide1").src = "./Images/error.svg";
+      document.getElementById("valide1").src = "./images/error.svg";
     } else {
       document.getElementById("pseudo").style.color = "black";
-      document.getElementById("valide1").src = "./Images/check.svg";
+      document.getElementById("valide1").src = "./images/check.svg";
     }
   });
 
@@ -18,10 +18,10 @@ function init() {
   document.getElementById("mail").addEventListener("input", (e) => {
     if (!validateEmail(e.target.value)) {
       document.getElementById("mail1").style.color = "red";
-      document.getElementById("valide2").src = "./Images/error.svg";
+      document.getElementById("valide2").src = "./images/error.svg";
     } else {
       document.getElementById("mail1").style.color = "black";
-      document.getElementById("valide2").src = "./Images/check.svg";
+      document.getElementById("valide2").src = "./images/check.svg";
     }
   });
 
@@ -36,7 +36,7 @@ function init() {
     val = e.target.value;
     if (!validatePassword(val)) {
       document.getElementById("regex").style.color = "red";
-      document.getElementById("valide3").src = "./Images/error.svg";
+      document.getElementById("valide3").src = "./images/error.svg";
       verifMDP();
     } else if (val.length < 6) {
       document.getElementById("fai").style.visibility = "visible";
@@ -46,7 +46,7 @@ function init() {
       document.getElementById("for").style.visibility = "hidden";
       document.getElementById("fort").style.visibility = "hidden";
       document.getElementById("regex").style.color = "black";
-      document.getElementById("valide3").src = "./Images/error.svg";
+      document.getElementById("valide3").src = "./images/error.svg";
       verifMDP();
     } else if (val.length >= 6 && val.length < 9) {
       document.getElementById("fai").style.visibility = "hidden";
@@ -56,7 +56,7 @@ function init() {
       document.getElementById("for").style.visibility = "hidden";
       document.getElementById("fort").style.visibility = "hidden";
       document.getElementById("regex").style.color = "black";
-      document.getElementById("valide3").src = "./Images/check.svg";
+      document.getElementById("valide3").src = "./images/check.svg";
       verifMDP();
     } else {
       document.getElementById("fai").style.visibility = "hidden";
@@ -66,7 +66,7 @@ function init() {
       document.getElementById("for").style.visibility = "visible";
       document.getElementById("fort").style.visibility = "visible";
       document.getElementById("regex").style.color = "black";
-      document.getElementById("valide3").src = "./Images/check.svg";
+      document.getElementById("valide3").src = "./images/check.svg";
       verifMDP();
     }
   });
@@ -78,11 +78,11 @@ function init() {
   function verifMDP() {
     if (val === "" || val2 === "") return;
     if (val === val2) {
-      document.getElementById("valide4").src = "./Images/check.svg";
+      document.getElementById("valide4").src = "./images/check.svg";
       document.getElementById("egal").textContent = "Il est identique.";
       document.getElementById("egal").style.color = "green";
     } else {
-      document.getElementById("valide4").src = "./Images/error.svg";
+      document.getElementById("valide4").src = "./images/error.svg";
       document.getElementById("egal").textContent = "Il n'est pas identique.";
       document.getElementById("egal").style.color = "red";
     }
@@ -95,10 +95,10 @@ document.getElementById("reset").addEventListener("click", () => {
   document.getElementById("regex").style.color = "black";
   document.getElementById("egal").style.color = "black";
 
-  document.getElementById("valide1").src = "./Images/error.svg";
-  document.getElementById("valide2").src = "./Images/error.svg";
-  document.getElementById("valide3").src = "./Images/error.svg";
-  document.getElementById("valide4").src = "./Images/error.svg";
+  document.getElementById("valide1").src = "./images/error.svg";
+  document.getElementById("valide2").src = "./images/error.svg";
+  document.getElementById("valide3").src = "./images/error.svg";
+  document.getElementById("valide4").src = "./images/error.svg";
 
   document.getElementById("fai").style.visibility = "hidden";
   document.getElementById("faible").style.visibility = "hidden";
