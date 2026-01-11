@@ -9,7 +9,7 @@ let currentUserEmail = JSON.parse(localStorage.getItem("currentUsers"))?.email;
 // bouton deconnexion
 document.getElementById("deconnect").addEventListener("click", function (e) {
   e.preventDefault();
-
+  let currentUserEmail = JSON.parse(localStorage.getItem("currentUsers"))?.email;
   if (!currentUserEmail) {
     alert("Aucun utilisateur n'est connecté!");
     return;

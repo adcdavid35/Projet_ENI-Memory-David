@@ -39,13 +39,13 @@
 .chiens .box,
 .chiens .formIns,
 .chiens .formCon,
+.chiens .confirmPW,
 .chiens .xxx {
   color: var(--color-chiens2);
 }
 
 .chiens .foot,
 .chiens .fofo,
-.chiens .confirmPW,
 .chiens .footer span {
   color: var(--color-chiens3);
 }
@@ -58,7 +58,6 @@
 }
 .chiens .lien {
   background-color: rgba(191, 237, 248, 0.6);
-
   backdrop-filter: blur(2px);
   box-shadow: 0px 0px 20px 5px var(--color-chiens1);
 }
