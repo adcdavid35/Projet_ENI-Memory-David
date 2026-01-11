@@ -16,7 +16,7 @@ document.getElementById("deconnect").addEventListener("click", function (e) {
   }
 
   // suppression du profil courant dans le LocalStorage
-  //delete currentUserEmail[currentUserEmail];
+  delete currentUserEmail[currentUserEmail];
 
   localStorage.removeItem("currentUsers");
   // RAZ des préférences de jeu dans le LocalStorage
