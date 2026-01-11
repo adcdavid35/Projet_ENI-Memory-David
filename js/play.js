@@ -1,5 +1,9 @@
+//au chargemetn de la page
 window.onload = init;
+
+//Variables
 let plat = findPlateau(grille);
+
 let scores = {
   plateau12: [{}],
   plateau16: [{}],
@@ -9,6 +13,14 @@ let scores = {
   plateau40: [{}],
 };
 
+let col = parseInt(grille.split(" X ")[0]);
+let row = parseInt(grille.split(" X ")[1]);
+
+let myImage = new Image();
+myImage.src = "./images/question.svg";
+myImage.className = "size";
+
+//on crée Scores
 if (!localStorage.getItem("scores")) {
   localStorage.setItem("scores", JSON.stringify(scores));
 }
@@ -17,12 +29,6 @@ if (!localStorage.getItem("scores")) {
 if (fond) {
   document.getElementById("caption").innerText = "Les " + label.toLowerCase() + " :";
 }
-
-let col = parseInt(grille.split(" X ")[0]);
-let row = parseInt(grille.split(" X ")[1]);
-let myImage = new Image();
-myImage.src = "./images/question.svg";
-myImage.className = "size";
 
 // génère le plateau de jeu en fonction des préférences
 function generateTable() {
@@ -42,9 +48,9 @@ function generateTable() {
     tblBody.appendChild(ligne);
   }
 }
-generateTable();
 
 function init() {
+  //variables
   let tableauImage = new Map();
   let valeurImages = [];
   let cartesCliquees = [];
@@ -100,14 +106,13 @@ function init() {
   let valeurImagesMelange = shuffle(valeurImages);
 
   // Je mélange mes cartes en fonction du tableau de paires
-  melangeCards();
 
   function melangeCards() {
     cardSelect.forEach((card, i) => {
       tableauImage.set(card, valeurImagesMelange[i]);
     });
   }
-
+  melangeCards();
   function disableCard(card) {
     card.dataset.disabled = "true";
     card.removeEventListener("click", returnCard);
@@ -135,7 +140,7 @@ function init() {
     let img = card.querySelector("img");
 
     // choix du jeu venant du profil
-    img.src = "./images/" + memory + "/" + tableauImage.get(card) + ".png";
+    img.src = "./images/" + fond + "/" + tableauImage.get(card) + ".png";
 
     coups.push(tableauImage.get(card));
     cartesCliquees.push(card);
@@ -165,8 +170,10 @@ function init() {
       }
     }
   }
+  // appel de la fonction
 }
 
+//fonction de mise à jour des scores
 function majScore(nom, compteur, memory) {
   //partie pour page :profil
   let users = JSON.parse(localStorage.getItem("users")) || {};
@@ -200,6 +207,7 @@ function majScore(nom, compteur, memory) {
   localStorage.setItem("scores", JSON.stringify(scores));
 }
 
+//fonction d'affichage des scores
 function showScore() {
   let scores = JSON.parse(localStorage.getItem("scores"));
 
@@ -236,7 +244,7 @@ function showScore() {
   }
 }
 
-showScore();
+//Comment relancer le jeu en fonction :
 //clavier
 document.addEventListener("keydown", (event) => {
   if (event.key === " ") {
@@ -246,7 +254,6 @@ document.addEventListener("keydown", (event) => {
 
 //Smartphone
 let tap = 0;
-
 document.addEventListener("pointerdown", (e) => {
   if (e.pointerType === "touch") {
     const now = Date.now();
@@ -257,6 +264,7 @@ document.addEventListener("pointerdown", (e) => {
   }
 });
 
+//redéfinition de la phrase d'explication de relance du jeu dans les règles du jeu
 function relanceJeu() {
   if (
     window.matchMedia("(orientation: landscape)") &&
@@ -269,4 +277,7 @@ function relanceJeu() {
   }
 }
 
+// appel des fonctions
+generateTable();
+showScore();
 window.addEventListener("resize", relanceJeu);

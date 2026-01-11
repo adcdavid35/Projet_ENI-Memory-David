@@ -1,7 +1,7 @@
-//select choix de jeu
+//select : choix de jeu
 const select = document.getElementById("choix");
 const data = [
-  { value: "", label: "Choississez votre thème :", disabled: true },
+  { value: "Default", label: "Choississez votre thème :", disabled: true },
   { value: "Chiens", label: "Chiens" },
   { value: "Dino", label: "Dinosaures" },
   { value: "Ferme", label: "Aminaux de la ferme" },
@@ -20,7 +20,7 @@ data.forEach((item) => {
   select.appendChild(option);
 });
 
-// select taille du plateau
+// select : taille du plateau
 const select2 = document.getElementById("Taille");
 const data2 = [
   { value: "", label: "Choississez votre plateau :", disabled: true },
@@ -44,146 +44,61 @@ data2.forEach((item) => {
   select2.appendChild(option);
 });
 
-// bouton enregistrement des options
-document.getElementById("xxx")?.addEventListener("submit", async function (e) {
-  e.preventDefault();
-  let memory = document.getElementById("choix").value;
-  let taille = document.getElementById("Taille").value;
-  let currentUsers = JSON.parse(localStorage.getItem("currentUsers"));
-  let users = JSON.parse(localStorage.getItem("users")) || {};
-  let email = currentUsers.email;
+// Variables:
 
-  if (!currentUsers) return;
-  if (!users[email]) {
-    alert("Utilisateur non trouvé !");
-    return;
-  }
-
-  users[email].preference = { memory, taille };
-  localStorage.setItem("users", JSON.stringify(users));
-  localStorage.setItem("currentUsers", JSON.stringify({ email }));
-
-  saveConfig();
-  window.location.href = "play.html";
-});
-
-// affichage du profil connecté dans les inputs
-function Profil() {
-  let users = JSON.parse(localStorage.getItem("users"));
-  let currentUsers = JSON.parse(localStorage.getItem("currentUsers"));
-
-  if (!currentUsers) return;
-
-  const email = currentUsers.email;
-  const user = users[email];
-
-  document.getElementById("nom").value = user.nom;
-  document.getElementById("mail").value = email;
-}
-
-// modification des images en fonction du choix dans le select
-let users = JSON.parse(localStorage.getItem("users"));
+let users = JSON.parse(localStorage.getItem("users")) || {};
 let currentUsers = JSON.parse(localStorage.getItem("currentUsers"));
-
+//let configJeu = JSON.parse(localStorage.getItem("config")) || {};
 const email = currentUsers.email;
 const user = users[email];
 
 let nom = user.nom;
 let mail = user;
 
+let memory = document.getElementById("choix").value;
+let taille = document.getElementById("Taille").value;
+
+// bouton enregistrement des options
+document.getElementById("xxx")?.addEventListener("submit", async function (e) {
+  e.preventDefault();
+  let memory = document.getElementById("choix").value;
+  let taille = document.getElementById("Taille").value;
+  if (!currentUsers) return;
+  if (!users[email]) {
+    alert("Utilisateur non trouvé !");
+    return;
+  }
+  // Enregistrement des options dans le localStorage/users
+  users[email].preference = { memory, taille };
+  localStorage.setItem("users", JSON.stringify(users));
+  localStorage.setItem("currentUsers", JSON.stringify({ email }));
+
+  // Appel de la fonction saveConfig()
+  saveConfig();
+
+  // redirection vers la page de jeu
+  window.location.href = "play.html";
+});
+
+/// affichage du profil connecté dans les inputs
+function Profil() {
+  if (!currentUsers) return;
+
+  document.getElementById("nom").value = user.nom;
+  document.getElementById("mail").value = email;
+}
+
 document.getElementById("choix").addEventListener("change", () => {
-  document.getElementById("global").src = "images/" + document.getElementById("choix").value + "/global.png";
-  document.getElementById("body").style.backgroundImage = "url('../images/Fonddecran/" + document.getElementById("choix").value + ".png')";
+  let choix = document.getElementById("choix").value;
+  // changement des images
+  document.getElementById("global").src = "images/" + choix + "/global.png";
+  document.getElementById("body").style.backgroundImage = "url('../images/Fonddecran/" + choix + ".png')";
 
-  if (document.getElementById("choix").value == "Chiens") {
-    document.querySelectorAll(".Accueil, .Inscription, .Connexion, .Profil, .Jouer").forEach((el) => {
-      el.style = "mix-blend-mode: screen";
-    });
+  // retirer toutes les classes de thème
+  document.body.classList.remove("chiens", "dino", "ferme", "savane");
 
-    document.querySelectorAll("h1, .Accueil, .Inscription, .Connexion, .Profil, .Jouer").forEach((el) => {
-      el.style.color = "#b6e8f5ff";
-    });
-
-    document.querySelectorAll(".box, .formIns,.formCon ,.xxx  ").forEach((el) => {
-      el.style.color = "#7bc4d7";
-    });
-
-    document.querySelectorAll(".foot,.fofo, .confirmPW, .footer span").forEach((el) => {
-      el.style.color = "#00222b";
-    });
-
-    document.querySelectorAll(".mandatory").forEach((el) => {
-      el.style.color = "#182a2eff";
-    });
-    if (nom) {
-      document.getElementById("nom").style.color = "#68797d";
-    }
-    if (mail) {
-      document.getElementById("mail").style.color = "#68797d";
-    }
-  }
-
-  if (document.getElementById("choix").value == "Dino") {
-    document.querySelectorAll(".Accueil, .Inscription, .Connexion, .Profil, .Jouer").forEach((el) => {
-      el.style = "mix-blend-mode: screen";
-    });
-
-    document.querySelectorAll("h1, .Accueil, .Inscription, .Connexion, .Profil, .Jouer").forEach((el) => {
-      el.style.color = "#c1f8d1ff";
-    });
-
-    document.querySelectorAll(".box, .formIns,.formCon ,.xxx  ").forEach((el) => {
-      el.style.color = "#063620ff";
-    });
-
-    document.querySelectorAll(".foot,.fofo, .confirmPW, .footer span").forEach((el) => {
-      el.style.color = "#021608ff";
-    });
-
-    document.querySelectorAll(".mandatory").forEach((el) => {
-      el.style.color = "#063620ff";
-    });
-    if (nom) {
-      document.getElementById("nom").style.color = "#2d3335ff";
-    }
-    if (mail) {
-      document.getElementById("mail").style.color = "#2d3335ff";
-    }
-  }
-
-  if (document.getElementById("choix").value == "Ferme") {
-    document.querySelectorAll(".Accueil, .Inscription, .Connexion, .Profil, .Jouer").forEach((el) => {
-      el.style = "mix-blend-mode: screen";
-    });
-
-    document.querySelectorAll("h1, .Accueil, .Inscription, .Connexion, .Profil, .Jouer").forEach((el) => {
-      el.style.color = "#faecd2ff";
-    });
-
-    document.querySelectorAll(".box, .formIns,.formCon ,.confirmPW,.xxx  ").forEach((el) => {
-      el.style.color = "#1f1304ff";
-    });
-
-    document.querySelectorAll(".foot, .fofo").forEach((el) => {
-      el.style.color = "#F2EDE8";
-    });
-
-    document.querySelectorAll(".footer span").forEach((el) => {
-      el.style.color = "black";
-    });
-
-    document.querySelectorAll(".mandatory").forEach((el) => {
-      el.style.color = "wheat";
-    });
-    if (nom) {
-      document.getElementById("nom").style.color = "#2d3335ff";
-    }
-    if (mail) {
-      document.getElementById("mail").style.color = "#2d3335ff";
-    }
-
-    localStorage.setItem("users", JSON.stringify(users));
-  }
+  // ajouter la bonne classe
+  document.body.classList.add(choix.toLowerCase());
 });
 
 // bouton supprimer compte
@@ -260,5 +175,4 @@ function showScorePlayer() {
 }
 
 Profil();
-
 showScorePlayer();

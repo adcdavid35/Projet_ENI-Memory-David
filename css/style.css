@@ -1,3 +1,161 @@
+:root {
+  --color-chiens1: #b6e8f5ff;
+  --color-chiens2: #7bc4d7;
+  --color-chiens3: #00222b;
+  --color-chiens4: #182a2eff;
+  --color-chiens5: #68797d;
+
+  --color-dino1: #c1f8d1ff;
+  --color-dino2: #063620ff;
+  --color-dino3: #021608ff;
+  --color-dino4: #063620ff;
+  --color-dino5: #2d3335ff;
+
+  --color-ferme1: #faecd2ff;
+  --color-ferme2: #1f1304ff;
+  --color-ferme3: #f2ede8;
+
+  --color-savane1: #fff6e5;
+  --color-savane2: #9d7c3f;
+  --color-savane3: #725a2e;
+  --color-savane4: #392c14;
+
+  /*to do thème par défaut*/
+}
+
+/*thème chiens = redéfinitions des couleurs*/
+
+.chiens .Accueil,
+.chiens .Inscription,
+.chiens .Connexion,
+.chiens .Profil,
+.chiens .Jouer {
+  mix-blend-mode: screen;
+  color: var(--color-chiens1);
+}
+.chiens h1 {
+  color: var(--color-chiens1);
+}
+.chiens .box,
+.chiens .formIns,
+.chiens .formCon,
+.chiens .xxx {
+  color: var(--color-chiens2);
+}
+
+.chiens .foot,
+.chiens .fofo,
+.chiens .confirmPW,
+.chiens .footer span {
+  color: var(--color-chiens3);
+}
+.chiens .mandatory {
+  color: var(--color-chiens4);
+}
+.chiens #nom,
+.chiens #mail {
+  color: var(--color-chiens5);
+}
+.chiens .lien {
+  background-color: rgba(191, 237, 248, 0.6);
+
+  backdrop-filter: blur(2px);
+  box-shadow: 0px 0px 20px 5px var(--color-chiens1);
+}
+
+/*thème dino = redéfinitions des couleurs*/
+
+.dino .Accueil,
+.dino .Inscription,
+.dino .Connexion,
+.dino .Profil,
+.dino .Jouer {
+  mix-blend-mode: screen;
+  color: var(--color-dino1);
+}
+.dino h1 {
+  color: var(--color-dino1);
+}
+
+.dino .box,
+.dino .formIns,
+.dino .formCon,
+.dino .xxx {
+  color: var(--color-dino3);
+}
+
+.dino .mandatory {
+  color: var(--color-dino4);
+}
+.dino #nom,
+.dino #mail,
+.ferme #nom,
+.ferme #mail {
+  color: var(--color-dino5);
+}
+
+/*thème ferme = redéfinitions des couleurs*/
+
+.ferme .Accueil,
+.ferme .Inscription,
+.ferme .Connexion,
+.ferme .Profil,
+.ferme .Jouer {
+  mix-blend-mode: screen;
+  color: var(--color-ferme1);
+}
+
+.ferme .h1 {
+  color: var(--color-ferme1);
+}
+.ferme .box,
+.ferme .formIns,
+.ferme .formCon,
+.ferme .confirmPW,
+.ferme .xxx {
+  color: var(--color-ferme2);
+}
+
+.ferme .foot,
+.ferme .fofo {
+  color: var(--color-ferme3);
+}
+
+.ferme .footer span {
+  color: black;
+}
+
+.ferme .mandatory {
+  color: wheat;
+}
+
+/*thème savane = redéfinitions des couleurs*/
+.savane .h1 {
+  color: var(--color-savane1);
+}
+
+.savane .Accueil,
+.savane .Inscription,
+.savane .Connexion,
+.savane .Profil,
+.savane .Jouer {
+  mix-blend-mode: multiply;
+  color: var(--color-savane3);
+}
+
+.savane .box,
+.savane .formIns,
+.savane .formCon,
+.savane .confirmPW,
+.savane .xxx,
+.savane .foot,
+.savane .fofo,
+.savane .footer span,
+.savane .mandatory {
+  color: var(--color-savane4);
+}
+
+/* Mise en forme générale */
 #body {
   background-image: url("../images/Fonddecran/Savane.png");
   background-attachment: fixed;
@@ -25,6 +183,7 @@ header {
   position: relative;
 }
 
+/* Titre de la page */
 h1 {
   color: #fff6e5;
   display: flex;
@@ -33,7 +192,7 @@ h1 {
   margin: 5px 0 0 0;
   mix-blend-mode: lighten;
 }
-
+/* Bouton de déconnexion */
 .reset2 {
   position: absolute;
   top: 5px;
@@ -48,6 +207,7 @@ h1 {
   padding: 0 5px;
 }
 
+/* Titre dans les box et form */
 h2 {
   display: flex;
   justify-content: left;
@@ -56,7 +216,7 @@ h2 {
   margin: 8px 0;
   mix-blend-mode: multiply;
 }
-
+/* Titre des tableaux de scores */
 h3 {
   display: flex;
   justify-content: center;
@@ -64,11 +224,13 @@ h3 {
   font-size: clamp(1.4rem, 0.3vw + 1rem, 2rem);
   margin: 5px 0;
 }
+/* Titre dans le footer */
 h4 {
   margin: 5px 0;
   font-size: clamp(0.8rem, 0.5vw + 0.6rem, 1rem);
 }
 
+/* Mise en forme navbar */
 .menu {
   display: grid;
   gap: 10px;
@@ -116,6 +278,7 @@ a li {
   mix-blend-mode: darken;
 }
 
+/* Mise en forme générale des box */
 .box {
   color: #392c14;
   border-radius: 10px;
@@ -137,11 +300,14 @@ a li {
 ul {
   margin: 8px;
 }
+
+/*bottom des boxes */
 .foot {
   color: #392c14;
   mix-blend-mode: multiply;
 }
 
+/* Mise en forme générale des form */
 form,
 fieldset {
   max-width: 500px;
@@ -155,6 +321,13 @@ fieldset {
   box-shadow: 0 10px 30px #9d7c3f;
 }
 
+/* séparation des 2 parties form & score dans profil */
+.binome {
+  display: flex;
+  gap: 50px;
+}
+
+/* Mise en forme spécifique des tableaux de scores */
 .ScorePlayer {
   max-width: 350px;
   min-width: 300px;
@@ -167,11 +340,7 @@ fieldset {
   box-shadow: 0 10px 30px #9d7c3f;
 }
 
-.binome {
-  display: flex;
-  gap: 50px;
-}
-
+/* Positionnement des sous parties des form */
 .formIns,
 .formCon,
 .profCon {
@@ -235,12 +404,13 @@ li.regles {
     ". . faible faible faible faible . . . . moyen moyen moyen moyen . . . . fort fort fort fort . .";
 }
 
+/* Mise en forme générale des label */
 label {
   grid-area: titre;
   font-size: clamp(0.9rem, 0.1vw + 1rem, 1.5rem);
   padding: 2px;
 }
-
+/* Mise en forme générale des input */
 input {
   background: transparent;
   outline: none;
@@ -251,6 +421,7 @@ input {
   font-size: clamp(0.8rem, 0.1vw + 1rem, 1.3rem);
   padding: 4px;
 }
+
 input::placeholder {
   color: beige;
   font-style: italic;
@@ -267,6 +438,8 @@ input:focus {
   box-shadow: 0 5px 15px #e7bb69;
 }
 
+/* 
+Gestion de la partie responsive du remplissage des input dans inscription.html */
 span.valide {
   min-width: 30px;
   justify-items: center;
@@ -319,6 +492,7 @@ span.valide {
   color: green;
 }
 
+/* phrase sous les inputs */
 p {
   grid-area: com;
   font-size: clamp(0.8rem, 0.1vw + 1rem, 1.3rem);
@@ -326,12 +500,14 @@ p {
   padding: 2px;
 }
 
+/* bottom du formulaire d'inscription */
 .mandatory {
   display: flex;
   justify-content: center;
   font-size: clamp(0.8rem, 0.1vw + 1rem, 1rem);
 }
 
+/* boutons :  submit et reset */
 .bouton {
   display: flex;
   flex-direction: row;
@@ -352,6 +528,7 @@ p {
   padding: 0;
 }
 
+/* entete dans profil */
 .welcome {
   display: flex;
   flex-direction: column;
@@ -359,6 +536,7 @@ p {
   mix-blend-mode: multiply;
 }
 
+/* select dans profil */
 .choix,
 .taille {
   display: flex;
@@ -375,6 +553,7 @@ select {
   font-size: clamp(0.5rem, 0.1vw + 1rem, 2rem);
 }
 
+/* regles du jeu dans index.html */
 .rules {
   display: flex;
   flex-direction: column;
@@ -385,6 +564,7 @@ select {
   flex-wrap: wrap;
   align-items: center;
 }
+/* regles du jeu dans play.html */
 .rules2 {
   display: flex;
   flex-direction: column;
@@ -395,7 +575,7 @@ select {
   flex-wrap: wrap;
   align-items: center;
 }
-
+/* sous parties */
 .rul {
   height: auto;
   font-size: clamp(0.8rem, 2vw, 3rem);
@@ -407,6 +587,7 @@ select {
   font-size: clamp(1rem, 1vw, 1.2rem);
 }
 
+/* Mise en forme générale des tableaux */
 table {
   width: 100%;
   height: auto;
@@ -442,6 +623,8 @@ td {
   margin: 2px;
   padding: 1px;
 }
+
+/* Gestion du rendu des liens */
 a {
   outline: none;
   text-decoration: none;
@@ -474,6 +657,7 @@ a:active {
   transform: scale(110%);
 }
 
+/* Gestion du lien spécifique "formulaire" dans l'index.html*/
 .fofo {
   color: #392c14;
 }
@@ -484,10 +668,6 @@ a:active {
 .fofo:visited {
   color: rgb(184, 130, 31);
   text-decoration: none;
-}
-a:focus {
-  border-bottom: 1px solid;
-  background: transparent;
 }
 
 .fofo:hover {
@@ -535,7 +715,9 @@ th {
 .sepTab {
   margin: 3px 0;
 }
+/* fin */
 
+/* Mide en page du footer et des ses sous parties */
 .footer {
   display: flex;
   flex-direction: row;
@@ -584,11 +766,13 @@ ul ul {
   background: none;
   color: inherit;
   border: none;
-
   font: inherit;
   cursor: pointer;
   outline: inherit;
 }
+/* fin */
+
+/* Gestion des modales */
 dialog {
   border: none;
   padding: 10px;
@@ -606,8 +790,21 @@ dialog button {
   display: flex;
   justify-self: center;
 }
+/* fin */
 
+/* Lien vers linkedin et Github */
+.lien {
+  position: absolute;
+  top: 5px;
+  right: 150px;
+  margin: 8px;
+}
+.lien img {
+  width: 2vw;
+}
+/* Gestion de l'orientation portrait */
 @media (orientation: portrait) {
+  /* On cache l'écran */
   body {
     overflow: hidden !important;
   }
@@ -615,7 +812,7 @@ dialog button {
   .landscape-only {
     display: none;
   }
-
+  /* appel de la div invitant à passer en paysage */
   .rotate-message {
     position: fixed;
     inset: 0;
@@ -630,23 +827,29 @@ dialog button {
   }
 }
 
+/* Gestion de l'orientation portrait */
 @media (orientation: landscape) {
+  /* on supprime la div invitant à passer en paysage */
   .rotate-message {
     display: none;
   }
-
-  .binome {
-    flex-direction: column;
-  }
 }
+
+/* on force la mise en ligne des scores dans le profil si écran d'ordinateur */
 @media screen and (min-width: 971px) {
   .binome {
     flex-direction: row;
   }
 }
+/* on force la mise en colonne des scores dans le profil si écran de smartphone */
 @media screen and (max-width: 970px) {
   .binome {
     flex-direction: column;
     align-items: center;
+  }
+
+  /* Les liens réseaux sociaux basculent à gauche de l'écran */
+  .lien {
+    left: 50px;
   }
 }
