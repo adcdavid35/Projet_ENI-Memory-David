@@ -24,7 +24,7 @@ document.getElementById("deconnect").addEventListener("click", function (e) {
   configJeu.fond = "";
   configJeu.label = "";
   configJeu.grille = "";
-
+  JSON.parse(localStorage.setItem("config"));
   alert("Vous êtes déconnecté!");
   // redirection vers la page de profil pour RAZ des input
   window.location.href = "profil.html";
