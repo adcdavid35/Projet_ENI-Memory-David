@@ -20,10 +20,11 @@ document.getElementById("deconnect").addEventListener("click", function (e) {
 
   localStorage.removeItem("currentUsers");
   // RAZ des préférences de jeu dans le LocalStorage
+
   configJeu.fond = "";
   configJeu.label = "";
   configJeu.grille = "";
-
+  JSON.parse(localStorage.setItem("config"));
   alert("Vous êtes déconnecté!");
   // redirection vers la page de profil pour RAZ des input
   window.location.href = "profil.html";
