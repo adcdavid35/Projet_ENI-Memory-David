@@ -140,7 +140,7 @@ function init() {
     let img = card.querySelector("img");
 
     // choix du jeu venant du profil
-    img.src = "./images/" + fond.toLowerCase + "/" + tableauImage.get(card) + ".png";
+    img.src = "./images/" + fond.toLowerCase() + "/" + tableauImage.get(card) + ".png";
 
     coups.push(tableauImage.get(card));
     cartesCliquees.push(card);
