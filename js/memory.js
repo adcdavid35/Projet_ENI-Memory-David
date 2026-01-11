@@ -16,7 +16,7 @@ document.getElementById("deconnect").addEventListener("click", function (e) {
   }
 
   // suppression du profil courant dans le LocalStorage
-  delete currentUserEmail[currentUserEmail];
+  //delete currentUserEmail[currentUserEmail];
 
   localStorage.removeItem("currentUsers");
   // RAZ des préférences de jeu dans le LocalStorage
@@ -24,7 +24,7 @@ document.getElementById("deconnect").addEventListener("click", function (e) {
   configJeu.fond = "";
   configJeu.label = "";
   configJeu.grille = "";
-  JSON.parse(localStorage.setItem("config"));
+  localStorage.setItem("config", JSON.stringify(configJeu));
   alert("Vous êtes déconnecté!");
   // redirection vers la page de profil pour RAZ des input
   window.location.href = "profil.html";
