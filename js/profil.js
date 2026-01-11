@@ -91,8 +91,8 @@ function Profil() {
 document.getElementById("choix").addEventListener("change", () => {
   let choix = document.getElementById("choix").value;
   // changement des images
-  document.getElementById("global").src = "images/" + choix + "/global.png";
-  document.getElementById("body").style.backgroundImage = "url('../images/Fonddecran/" + choix + ".png')";
+  document.getElementById("global").src = "images/" + choix.toLowerCase + "/global.png";
+  document.getElementById("body").style.backgroundImage = "url('../images/fonddecran/" + choix.toLowerCase + ".png')";
 
   // retirer toutes les classes de thème
   document.body.classList.remove("chiens", "dino", "ferme", "savane");

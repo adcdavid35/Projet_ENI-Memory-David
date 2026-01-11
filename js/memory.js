@@ -35,9 +35,9 @@ document.getElementById("deconnect").addEventListener("click", function (e) {
 
 //changement des images de fond et de présentation du jeu(index)
 if (fond) {
-  document.getElementById("body").style.backgroundImage = "url('../images/Fonddecran/" + fond + ".png')";
+  document.getElementById("body").style.backgroundImage = "url('../images/fonddecran/" + fond.toLowerCase + ".png')";
   if (document.getElementById("global")) {
-    document.getElementById("global").src = "images/" + fond + "/global.png";
+    document.getElementById("global").src = "images/" + fond.toLowerCase + "/global.png";
   }
 }
 
